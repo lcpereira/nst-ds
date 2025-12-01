@@ -1,0 +1,51 @@
+{
+  "name": "@nstech-ds/foundation",
+  "version": "1.0.0",
+  "description": "Tokens, themes e brands do Design System NSTech",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./css/*": "./dist/css/*.css",
+    "./tokens": "./dist/tokens/index.js",
+    "./tailwind": "./dist/tailwind-plugin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/generate-brands.mjs && tsup && node scripts/build-css.mjs",
+    "build:brands": "node scripts/generate-brands.mjs",
+    "build:css": "node scripts/build-css.mjs",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "design-system",
+    "tokens",
+    "themes",
+    "css-variables"
+  ],
+  "author": "NSTech",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lcpereira/nst-ds.git",
+    "directory": "packages/foundation"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}
+

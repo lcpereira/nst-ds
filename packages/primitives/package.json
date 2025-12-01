@@ -1,0 +1,59 @@
+{
+  "name": "@nstech-ds/primitives",
+  "version": "1.0.0",
+  "description": "Web Components universais do Design System NSTech",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./bundle/nstech-ds.css": "./dist/bundle/nstech-ds.css",
+    "./bundle/nstech-ds.esm.js": "./dist/bundle/nstech-ds.esm.js",
+    "./loader": "./dist/loader/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "stencil build && node scripts/build-bundle.mjs",
+    "build:bundle": "node scripts/build-bundle.mjs",
+    "dev": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watch",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@stencil/core": "^4.15.0"
+  },
+  "devDependencies": {
+    "@stencil/react-output-target": "^0.5.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "typescript": "^5.7.2"
+  },
+  "keywords": [
+    "design-system",
+    "web-components",
+    "stencil",
+    "custom-elements"
+  ],
+  "author": "NSTech",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lcpereira/nst-ds.git",
+    "directory": "packages/primitives"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
+

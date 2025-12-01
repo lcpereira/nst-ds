@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSTech Design System - Exemplo Básico</title>
+  <!-- Importar CSS do Foundation -->
+  <link rel="stylesheet" href="../packages/foundation/dist/css/nstech.css">
+  <!-- Importar Web Components -->
+  <script type="module" src="../packages/primitives/dist/nstech-ds/nstech-ds.esm.js"></script>
+  <style>
+    body {
+      font-family: var(--font-sans);
+      padding: var(--spacing-8);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .section {
+      margin-bottom: var(--spacing-8);
+    }
+  </style>
+</head>
+<body>
+  <h1>NSTech Design System - Exemplo</h1>
+  
+  <section class="section">
+    <h2>Buttons</h2>
+    <ds-button variant="primary" size="md">Primary</ds-button>
+    <ds-button variant="secondary" size="md">Secondary</ds-button>
+    <ds-button variant="outline" size="md">Outline</ds-button>
+    <ds-button variant="ghost" size="md">Ghost</ds-button>
+  </section>
+
+  <section class="section">
+    <h2>Input</h2>
+    <ds-input type="text" placeholder="Digite algo..." style="max-width: 300px;"></ds-input>
+  </section>
+
+  <section class="section">
+    <h2>Card</h2>
+    <ds-card padding="md" style="max-width: 400px;">
+      <h3>Card Title</h3>
+      <p>Este é um exemplo de card usando Web Components do Design System.</p>
+    </ds-card>
+  </section>
+
+  <section class="section">
+    <h2>Badge</h2>
+    <ds-badge variant="primary">Primary</ds-badge>
+    <ds-badge variant="secondary">Secondary</ds-badge>
+    <ds-badge variant="success">Success</ds-badge>
+  </section>
+
+  <section class="section">
+    <h2>Spinner</h2>
+    <ds-spinner size="md"></ds-spinner>
+  </section>
+
+  <section class="section">
+    <h2>Dark Mode</h2>
+    <button onclick="document.documentElement.classList.toggle('dark')">
+      Toggle Dark Mode
+    </button>
+  </section>
+</body>
+</html>
+

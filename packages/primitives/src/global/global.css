@@ -1,0 +1,13 @@
+/**
+ * Global styles para Web Components
+ * Herda tokens do @nstech-ds/foundation via CSS vars
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+}
+

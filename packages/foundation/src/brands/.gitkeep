@@ -1,0 +1,17 @@
+# Esta pasta contém os arquivos de brand do Design System
+# 
+# Para adicionar um novo brand:
+# 1. Crie um arquivo .json com o nome do brand (ex: novobrand.json)
+# 2. Use a seguinte estrutura:
+#
+# {
+#   "brand": "novobrand",
+#   "colors": {
+#     "primary": "#0A5FFF",
+#     "secondary": "#1CC8EE"
+#   }
+# }
+#
+# 3. Execute `yarn build` - o sistema detectará automaticamente o novo brand
+# 4. Um arquivo CSS será gerado em dist/css/novobrand.css
+
