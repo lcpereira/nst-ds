@@ -1,0 +1,63 @@
+name: Deploy CDN Assets
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Setup Yarn
+        run: |
+          npm install -g yarn@1.22.22
+          yarn --version
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      
+      - name: Build packages
+        run: yarn build
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Prepare CDN directory
+        run: |
+          mkdir -p cdn
+          
+          # Copiar CSS do Foundation
+          mkdir -p cdn/foundation/css
+          cp -r packages/foundation/dist/css/* cdn/foundation/css/ || true
+          
+          # Copiar bundle do Primitives
+          mkdir -p cdn/primitives/bundle
+          cp -r packages/primitives/dist/bundle/* cdn/primitives/bundle/ || true
+          
+          # Copiar index.html
+          cp .github/cdn-index.html cdn/index.html
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './cdn'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

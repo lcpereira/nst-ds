@@ -16,6 +16,7 @@ npm install @lcpereira/nst-ds-primitives
 
 Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
 
+**Opção 1: GitHub Pages (Recomendado)**
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,13 +25,13 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
   <title>Minha App</title>
   
   <!-- 1. Importar CSS do Foundation (escolha o brand) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
   
   <!-- 2. Importar CSS dos Primitives -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css">
   
   <!-- 3. Importar JavaScript dos Primitives -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js"></script>
 </head>
 <body>
   <!-- Usar os componentes -->
@@ -44,18 +45,39 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
 </html>
 ```
 
+**Opção 2: jsDelivr (GitHub Repository)**
+```html
+<!-- Foundation CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
+
+<!-- Primitives CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.css">
+
+<!-- Primitives JS -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.esm.js"></script>
+```
+
+Veja [CDN.md](../../CDN.md) para mais detalhes sobre as opções de CDN.
+
 ## Uso
 
 ### HTML/Vanilla JS (CDN)
 
+**GitHub Pages:**
 ```html
-<!-- Importar via CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css">
+<script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js"></script>
 
 <!-- Usar os componentes -->
 <ds-button variant="primary">Clique aqui</ds-button>
+```
+
+**jsDelivr (alternativa):**
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.css">
+<script type="module" src="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.esm.js"></script>
 ```
 
 ### HTML/Vanilla JS (NPM)
@@ -137,9 +159,13 @@ function App() {
 - `dist/bundle/nstech-ds.esm.js` - JavaScript ESM
 - `dist/loader/index.js` - Loader para React
 
-### Via CDN
-- `https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css`
-- `https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js`
+### Via CDN (GitHub Pages)
+- `https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css`
+- `https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js`
+
+### Via CDN (jsDelivr - alternativa)
+- `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.css`
+- `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.esm.js`
 
 ## Notas
 

@@ -49,8 +49,12 @@ import '@lcpereira/nst-ds-foundation/dist/css/nstech.css';
 
 **Uso CDN (sem npm):**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
-<!-- ou nsapps.css, ambevtech.css -->
+<!-- GitHub Pages (recomendado) -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
+<!-- ou nsapps.css -->
+
+<!-- Alternativa: jsDelivr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
 ```
 
 ### @lcpereira/nst-ds-primitives
@@ -63,9 +67,10 @@ Web Components universais compatíveis com qualquer stack (React, Angular, Vue, 
 
 **Uso CDN (sem npm):**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+<!-- GitHub Pages (recomendado) -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css">
+<script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js"></script>
 
 <ds-button variant="primary">Clique aqui</ds-button>
 ```
@@ -103,24 +108,29 @@ O Design System pode ser usado diretamente via CDN, sem necessidade de npm ou bu
 
 ### Foundation (CSS)
 ```html
-<!-- Escolha o brand -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+<!-- GitHub Pages (recomendado) -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
+<!-- ou nsapps.css -->
+
+<!-- Alternativa: jsDelivr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
 ```
 
 ### Primitives (Web Components)
 ```html
+<!-- GitHub Pages (recomendado) -->
 <!-- CSS do Foundation primeiro -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
 <!-- CSS dos Primitives -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css">
 <!-- JavaScript dos Primitives -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+<script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js"></script>
 
 <!-- Usar os componentes -->
 <ds-button variant="primary">Clique aqui</ds-button>
 ```
 
-Veja [exemplo completo](./examples/cdn-usage.html) de uso via CDN.
+Veja [exemplo completo](./examples/cdn-usage.html) e [CDN.md](./CDN.md) para mais detalhes sobre as opções de CDN.
 
 ## 🏗️ Arquitetura
 

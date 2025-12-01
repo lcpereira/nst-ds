@@ -44,18 +44,23 @@ const exampleHtml = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NSTech Design System - Exemplo</title>
   
-  <!-- 1. Importar CSS do Foundation (escolha o brand) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+  <!-- 1. Importar CSS do Foundation (escolha o brand) - GitHub Pages -->
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
   <!-- ou -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nsapps.css"> -->
-  <!-- ou -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/ambevtech.css"> -->
+  <!-- <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nsapps.css"> -->
   
   <!-- 2. Importar CSS dos Primitives -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css">
   
   <!-- 3. Importar JavaScript dos Primitives (ESM) -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js"></script>
+  
+  <!-- Alternativa: jsDelivr -->
+  <!--
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.css">
+  <script type="module" src="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.esm.js"></script>
+  -->
 </head>
 <body>
   <h1>NSTech Design System</h1>

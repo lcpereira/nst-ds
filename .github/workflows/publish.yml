@@ -12,7 +12,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     
     steps:
@@ -27,7 +27,9 @@ jobs:
           scope: '@lcpereira'
       
       - name: Setup Yarn
-        run: corepack enable
+        run: |
+          npm install -g yarn@1.22.22
+          yarn --version
       
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -58,3 +60,4 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      

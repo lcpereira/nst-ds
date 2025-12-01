@@ -14,16 +14,21 @@ npm install @lcpereira/nst-ds-foundation
 
 ### CDN (Sem NPM)
 
-Use diretamente no HTML via CDN:
-
+**Opção 1: GitHub Pages (Recomendado)**
 ```html
-<!-- Escolha o brand que deseja usar -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
 <!-- ou -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nsapps.css">
-<!-- ou -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/ambevtech.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nsapps.css">
 ```
+
+**Opção 2: jsDelivr (GitHub Repository)**
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
+<!-- ou -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nsapps.css">
+```
+
+**Nota:** Para versões específicas no jsDelivr, substitua `@main` por `@v1.0.0` (tag) ou `@commit-hash`. Veja [CDN.md](../../CDN.md) para mais detalhes.
 
 ## Uso
 
@@ -40,8 +45,11 @@ const spacingValue = spacing[4]; // '1rem'
 ### CSS (CDN ou NPM)
 
 ```html
-<!-- Via CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+<!-- Via CDN - GitHub Pages (recomendado) -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
+
+<!-- Via CDN - jsDelivr (alternativa) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css">
 
 <!-- Via NPM (se estiver usando bundler) -->
 <!-- O caminho será: node_modules/@lcpereira/nst-ds-foundation/dist/css/nstech.css -->
@@ -67,11 +75,13 @@ Os brands são detectados automaticamente! Qualquer arquivo `.json` na pasta `sr
 
 - `nstech` - Brand principal
   - CSS: `dist/css/nstech.css`
-  - CDN: `https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css`
+  - CDN (GitHub Pages): `https://lcpereira.github.io/nst-ds/foundation/css/nstech.css`
+  - CDN (jsDelivr): `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css`
 
 - `nsapps` - Brand NSApps
   - CSS: `dist/css/nsapps.css`
-  - CDN: `https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nsapps.css`
+  - CDN (GitHub Pages): `https://lcpereira.github.io/nst-ds/foundation/css/nsapps.css`
+  - CDN (jsDelivr): `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nsapps.css`
 
 ### Adicionar Novo Brand
 
