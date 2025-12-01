@@ -45,9 +45,11 @@ jobs:
           mkdir -p cdn/foundation/css
           cp -r packages/foundation/dist/css/* cdn/foundation/css/ || true
           
-          # Copiar bundle do Primitives
+          # Copiar bundle do Primitives (todos os arquivos JS, incluindo chunks)
           mkdir -p cdn/primitives/bundle
-          cp -r packages/primitives/dist/bundle/* cdn/primitives/bundle/ || true
+          if [ -d "packages/primitives/dist/bundle" ]; then
+            cp -r packages/primitives/dist/bundle/* cdn/primitives/bundle/ || true
+          fi
           
           # Copiar index.html
           cp .github/cdn-index.html cdn/index.html

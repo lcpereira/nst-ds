@@ -11,9 +11,9 @@ const __dirname = path.dirname(__filename);
 // Caminhos
 const distDir = path.join(__dirname, '../dist');
 const bundleDir = path.join(__dirname, '../dist/bundle');
-const esmPath = path.join(distDir, 'nstech-ds/nstech-ds.esm.js');
-const cssPath = path.join(distDir, 'nstech-ds/nstech-ds.css');
-const loaderPath = path.join(distDir, 'loader/index.js');
+const nstechDsDir = path.join(distDir, 'nstech-ds');
+const cssPath = path.join(nstechDsDir, 'nstech-ds.css');
+const esmPath = path.join(nstechDsDir, 'nstech-ds.esm.js');
 
 // Criar diretório bundle se não existir
 if (!fs.existsSync(bundleDir)) {
@@ -30,10 +30,24 @@ if (fs.existsSync(cssPath)) {
   fs.writeFileSync(cssOutputPath, minimalCss, 'utf-8');
 }
 
-// Criar bundle ESM para uso moderno
-if (fs.existsSync(esmPath)) {
-  const esmOutputPath = path.join(bundleDir, 'nstech-ds.esm.js');
-  fs.copyFileSync(esmPath, esmOutputPath);
+// Copiar todos os arquivos JS necessários (incluindo chunks com hash)
+if (fs.existsSync(nstechDsDir)) {
+  const files = fs.readdirSync(nstechDsDir);
+  
+  // Copiar o bundle principal
+  if (fs.existsSync(esmPath)) {
+    const esmOutputPath = path.join(bundleDir, 'nstech-ds.esm.js');
+    fs.copyFileSync(esmPath, esmOutputPath);
+  }
+  
+  // Copiar todos os arquivos .js (chunks com hash como p-Bi2NqiEq.js, p-1d6cc663.entry.js, etc.)
+  files.forEach(file => {
+    if (file.endsWith('.js') && file !== 'nstech-ds.esm.js' && !file.endsWith('.map')) {
+      const sourcePath = path.join(nstechDsDir, file);
+      const destPath = path.join(bundleDir, file);
+      fs.copyFileSync(sourcePath, destPath);
+    }
+  });
 }
 
 // Criar arquivo de exemplo de uso
