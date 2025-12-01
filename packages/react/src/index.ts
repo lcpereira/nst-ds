@@ -1,6 +1,6 @@
 /**
  * @lcpereira/nst-ds-react
- * Componentes React completos do Design System NSTech
+ * Componentes React completos do Design System
  */
 
 // UI Components

@@ -52,9 +52,3 @@ Após adicionar este arquivo e executar `yarn build`, você terá:
 - `dist/css/minhaempresa.css` disponível
 - Tipos TypeScript atualizados
 - Acesso via `brands.minhaempresa` no código
-
-## Brands Atuais
-
-- `nstech` - Brand principal
-- `nsapps` - Brand NSApps
-

@@ -17,7 +17,6 @@ const files = fs.readdirSync(brandsDir).filter(file =>
 );
 
 if (files.length === 0) {
-  console.warn('Nenhum arquivo de brand encontrado');
   process.exit(0);
 }
 
@@ -36,20 +35,17 @@ for (const brandName of brandNames) {
     
     // Validar estrutura
     if (!brandData.brand || !brandData.colors || !brandData.colors.primary || !brandData.colors.secondary) {
-      console.warn(`${brandName}.json: estrutura inválida`);
       continue;
     }
     
     brands[brandName] = brandData;
     brandTypes.push(`'${brandName}'`);
   } catch (error) {
-    console.error(`${brandName}.json: ${error.message}`);
     continue;
   }
 }
 
 if (Object.keys(brands).length === 0) {
-  console.error('Nenhum brand válido encontrado');
   process.exit(1);
 }
 
@@ -59,7 +55,7 @@ const brandType = brandTypes.join(' | ');
 const exportsObject = brandNames.map(name => `  ${name},`).join('\n');
 
 const indexContent = `/**
- * Brands do Design System NSTech
+ * Brands do Design System
  * Este arquivo é gerado automaticamente pelo script generate-brands.mjs
  * Para adicionar um novo brand, simplesmente adicione um arquivo .json na pasta brands/
  * 

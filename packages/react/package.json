@@ -1,7 +1,7 @@
 {
   "name": "@lcpereira/nst-ds-react",
   "version": "1.0.0",
-  "description": "Componentes React completos do Design System NSTech",
+  "description": "Componentes React completos do Design System",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -69,7 +69,7 @@
     "shadcn",
     "tailwind"
   ],
-  "author": "NSTech",
+  "author": "lcpereira",
   "license": "MIT",
   "repository": {
     "type": "git",

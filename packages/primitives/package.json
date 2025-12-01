@@ -1,7 +1,7 @@
 {
   "name": "@lcpereira/nst-ds-primitives",
   "version": "1.0.0",
-  "description": "Web Components universais do Design System NSTech",
+  "description": "Web Components universais do Design System",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
@@ -12,8 +12,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs.js"
     },
-    "./bundle/nstech-ds.css": "./dist/bundle/nstech-ds.css",
-    "./bundle/nstech-ds.esm.js": "./dist/bundle/nstech-ds.esm.js",
+    "./bundle/nst-ds.css": "./dist/bundle/nst-ds.css",
+    "./bundle/nst-ds.esm.js": "./dist/bundle/nst-ds.esm.js",
     "./loader": "./dist/loader/index.js"
   },
   "files": [
@@ -45,7 +45,7 @@
     "stencil",
     "custom-elements"
   ],
-  "author": "NSTech",
+  "author": "lcpereira",
   "license": "MIT",
   "repository": {
     "type": "git",

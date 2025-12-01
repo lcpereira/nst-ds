@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const readJSON = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 const brandsDir = path.join(__dirname, '../src/brands');
-const brandFiles = fs.readdirSync(brandsDir).filter(file => 
+const brandFiles = fs.readdirSync(brandsDir).filter(file =>
   file.endsWith('.json') && file !== 'index.json'
 );
 
@@ -19,16 +19,13 @@ for (const file of brandFiles) {
     const brandData = readJSON(path.join(brandsDir, file));
     if (brandData.brand && brandData.colors?.primary && brandData.colors?.secondary) {
       brands[brandName] = brandData;
-    } else {
-      console.warn(`${file}: estrutura inválida`);
     }
   } catch (error) {
-    console.error(`${file}: ${error.message}`);
+    // Ignorar arquivos inválidos
   }
 }
 
 if (Object.keys(brands).length === 0) {
-  console.error('Nenhum brand válido encontrado');
   process.exit(1);
 }
 
@@ -69,68 +66,68 @@ function generateBrandCSS(brandName, brandData) {
   const [secondaryH, secondaryS, secondaryL] = hexToHsl(brandData.colors.secondary);
 
   const cssVars = [];
-  
+
   // Brand colors
   cssVars.push(`  --color-primary: ${primaryH} ${primaryS}% ${primaryL}%;`);
   cssVars.push(`  --color-primary-hex: ${brandData.colors.primary};`);
   cssVars.push(`  --color-secondary: ${secondaryH} ${secondaryS}% ${secondaryL}%;`);
   cssVars.push(`  --color-secondary-hex: ${brandData.colors.secondary};`);
-  
+
   // Core tokens
   Object.entries(coreTokens.colors.neutral).forEach(([key, value]) => {
     cssVars.push(`  --color-neutral-${key}: ${value};`);
   });
-  
+
   Object.entries(coreTokens.spacing).forEach(([key, value]) => {
     cssVars.push(`  --spacing-${key}: ${value};`);
   });
-  
+
   Object.entries(coreTokens.radii).forEach(([key, value]) => {
     cssVars.push(`  --radius-${key}: ${value};`);
   });
-  
+
   cssVars.push(`  --font-sans: ${coreTokens.typography.fontFamily.sans.join(', ')};`);
   cssVars.push(`  --font-mono: ${coreTokens.typography.fontFamily.mono.join(', ')};`);
-  
+
   Object.entries(coreTokens.typography.fontSize).forEach(([key, value]) => {
     cssVars.push(`  --font-size-${key}: ${value};`);
   });
-  
+
   Object.entries(coreTokens.typography.fontWeight).forEach(([key, value]) => {
     cssVars.push(`  --font-weight-${key}: ${value};`);
   });
-  
+
   Object.entries(coreTokens.motion.duration).forEach(([key, value]) => {
     cssVars.push(`  --duration-${key}: ${value};`);
   });
-  
+
   Object.entries(coreTokens.motion.easing).forEach(([key, value]) => {
     cssVars.push(`  --easing-${key}: ${value};`);
   });
-  
+
   cssVars.push(`  --transition-default: ${coreTokens.motion.transition.default};`);
   cssVars.push(`  --transition-colors: ${coreTokens.motion.transition.colors};`);
-  
+
   Object.entries(coreTokens.zIndex).forEach(([key, value]) => {
     cssVars.push(`  --z-${key}: ${value};`);
   });
-  
+
   Object.entries(themes.light.colors).forEach(([key, value]) => {
     cssVars.push(`  --color-${key}: ${value};`);
   });
-  
+
   const lightCSS = `:root {\n${cssVars.join('\n')}\n}\n\n`;
-  
+
   const darkVars = [];
   Object.entries(themes.dark.colors).forEach(([key, value]) => {
     darkVars.push(`  --color-${key}: ${value};`);
   });
-  
+
   const adjustedPrimaryL = Math.min(primaryL + 15, 100);
   darkVars.push(`  --color-primary: ${primaryH} ${primaryS}% ${adjustedPrimaryL}%;`);
-  
+
   const darkCSS = `.dark {\n${darkVars.join('\n')}\n}\n`;
-  
+
   return lightCSS + darkCSS;
 }
 
@@ -139,10 +136,15 @@ if (!fs.existsSync(distCssDir)) {
   fs.mkdirSync(distCssDir, { recursive: true });
 }
 
-// Gera CSS para cada brand
+// Gera CSS para cada brand (mantém compatibilidade com npm)
 Object.entries(brands).forEach(([brandName, brandData]) => {
   const css = generateBrandCSS(brandName, brandData);
+  // Manter nome original para npm
   const outputPath = path.join(distCssDir, `${brandName}.css`);
   fs.writeFileSync(outputPath, css, 'utf-8');
+  
+  // Gerar também com prefixo nst- para CDN
+  const cdnOutputPath = path.join(distCssDir, `nst-${brandName}.css`);
+  fs.writeFileSync(cdnOutputPath, css, 'utf-8');
 });
 

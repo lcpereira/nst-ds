@@ -1,7 +1,7 @@
 {
   "name": "@lcpereira/nst-ds-foundation",
   "version": "1.0.0",
-  "description": "Tokens, themes e brands do Design System NSTech",
+  "description": "Tokens, themes e brands do Design System",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -32,7 +32,7 @@
     "themes",
     "css-variables"
   ],
-  "author": "NSTech",
+  "author": "lcpereira",
   "license": "MIT",
   "repository": {
     "type": "git",

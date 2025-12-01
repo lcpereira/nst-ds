@@ -1,6 +1,6 @@
 /**
  * @lcpereira/nst-ds-foundation
- * Tokens, themes e brands do Design System NSTech
+ * Tokens, themes e brands do Design System
  */
 
 export * from './tokens/core';

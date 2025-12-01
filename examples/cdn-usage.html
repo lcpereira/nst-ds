@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NSTech Design System - Uso via CDN</title>
-  
-  <!-- 1. Importar CSS do Foundation (escolha o brand) - GitHub Pages -->
-  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nstech.css">
-  <!-- Outras opções: -->
-  <!-- <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/nsapps.css"> -->
-  
-  <!-- Alternativa: jsDelivr -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nstech.css"> -->
-  
-  <!-- 2. Importar CSS dos Primitives -->
-  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.css">
-  
-  <!-- 3. Importar JavaScript dos Primitives (ESM) -->
-  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nstech-ds.esm.js"></script>
-  
-  <!-- Alternativa: jsDelivr -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.css"> -->
-  <!-- <script type="module" src="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nstech-ds.esm.js"></script> -->
-  
+  <title>Design System - Uso via CDN</title>
+
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/nst-ds.css">
+  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.js"></script>
+
   <style>
     body {
       font-family: var(--font-sans, system-ui, sans-serif);
@@ -32,31 +19,37 @@
       background-color: var(--color-background, #ffffff);
       color: var(--color-foreground, #171717);
     }
+
     .section {
       margin-bottom: var(--spacing-8, 2rem);
       padding: var(--spacing-4, 1rem);
       border: 1px solid var(--color-border, #e5e5e5);
       border-radius: var(--radius-lg, 0.5rem);
     }
-    h1, h2 {
+
+    h1,
+    h2 {
       color: var(--color-foreground, #171717);
     }
+
     .button-group {
       display: flex;
       gap: var(--spacing-4, 1rem);
       flex-wrap: wrap;
       margin: var(--spacing-4, 1rem) 0;
     }
+
     .input-group {
       max-width: 400px;
       margin: var(--spacing-4, 1rem) 0;
     }
   </style>
 </head>
+
 <body>
-  <h1>NSTech Design System - Exemplo via CDN</h1>
+  <h1>Design System - Exemplo via CDN</h1>
   <p>Este exemplo mostra como usar o Design System sem npm, diretamente via CDN.</p>
-  
+
   <section class="section">
     <h2>Buttons</h2>
     <div class="button-group">
@@ -89,7 +82,8 @@
     <h2>Card</h2>
     <ds-card padding="md" style="max-width: 500px;">
       <h3>Card Title</h3>
-      <p>Este é um exemplo de card usando Web Components do Design System. O card herda automaticamente os tokens do Foundation via CSS variables.</p>
+      <p>Este é um exemplo de card usando Web Components do Design System. O card herda automaticamente os tokens do
+        Foundation via CSS variables.</p>
       <div class="button-group" style="margin-top: var(--spacing-4, 1rem);">
         <ds-button variant="primary" size="sm">Ação 1</ds-button>
         <ds-button variant="outline" size="sm">Ação 2</ds-button>
@@ -125,24 +119,6 @@
       Toggle Dark Mode
     </ds-button>
   </section>
-
-  <section class="section">
-    <h2>Código de Exemplo</h2>
-    <pre style="background: var(--color-muted, #f5f5f5); padding: var(--spacing-4, 1rem); border-radius: var(--radius-md, 0.375rem); overflow-x: auto;"><code>&lt;!-- 1. CSS do Foundation --&gt;
-&lt;link rel="stylesheet" 
-      href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css"&gt;
-
-&lt;!-- 2. CSS dos Primitives --&gt;
-&lt;link rel="stylesheet" 
-      href="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.css"&gt;
-
-&lt;!-- 3. JavaScript dos Primitives --&gt;
-&lt;script type="module" 
-        src="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.esm.js"&gt;&lt;/script&gt;
-
-&lt;!-- 4. Usar os componentes --&gt;
-&lt;ds-button variant="primary"&gt;Clique aqui&lt;/ds-button&gt;</code></pre>
-  </section>
 </body>
-</html>
 
+</html>

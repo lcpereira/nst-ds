@@ -1,6 +1,6 @@
 # @lcpereira/nst-ds-react
 
-Componentes React completos do Design System NSTech. Construído com shadcn/ui, Tailwind CSS e Radix UI.
+Componentes React completos do Design System. Construído com shadcn/ui, Tailwind CSS e Radix UI.
 
 ## Instalação
 
@@ -63,7 +63,7 @@ function App() {
 Os componentes usam tokens do `@lcpereira/nst-ds-foundation` via Tailwind. Certifique-se de importar o CSS do foundation:
 
 ```tsx
-import '@lcpereira/nst-ds-foundation/dist/css/nstech.css';
+import '@lcpereira/nst-ds-foundation/dist/css/theme1.css';
 import '@lcpereira/nst-ds-react/styles';
 ```
 

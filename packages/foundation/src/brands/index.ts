@@ -1,5 +1,5 @@
 /**
- * Brands do Design System NSTech
+ * Brands do Design System
  * Este arquivo é gerado automaticamente pelo script generate-brands.mjs
  * Para adicionar um novo brand, simplesmente adicione um arquivo .json na pasta brands/
  * 
@@ -13,10 +13,10 @@
  * }
  */
 
-import nsapps from './nsapps.json';
-import nstech from './nstech.json';
+import theme1 from './theme1.json';
+import theme2 from './theme2.json';
 
-export type Brand = 'nsapps' | 'nstech';
+export type Brand = 'theme1' | 'theme2';
 
 export interface BrandColors {
   brand: Brand;
@@ -27,8 +27,8 @@ export interface BrandColors {
 }
 
 export const brands = {
-  nsapps,
-  nstech,
+  theme1,
+  theme2,
 } as const;
 
 export default brands;
