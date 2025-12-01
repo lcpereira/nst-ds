@@ -4,9 +4,10 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "composite": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmit": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist", "scripts"]
+  "exclude": ["node_modules", "dist", "scripts", "**/*.mjs", "**/*.js"]
 }
 

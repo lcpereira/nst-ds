@@ -71,8 +71,8 @@ export const tailwindConfig: Partial<Config> = {
       fontSize: Object.entries(typography.fontSize).reduce((acc, [key, value]) => {
         if (Array.isArray(value)) {
           acc[key] = [value[0] as string, { lineHeight: (value[1] as { lineHeight: string }).lineHeight }];
-        } else {
-          acc[key] = value as string;
+        } else if (typeof value === 'string') {
+          acc[key] = value;
         }
         return acc;
       }, {} as Record<string, string | [string, { lineHeight: string }]>),
