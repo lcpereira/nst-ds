@@ -68,63 +68,63 @@ function generateBrandCSS(brandName, brandData) {
   const cssVars = [];
 
   // Brand colors
-  cssVars.push(`  --color-primary: ${primaryH} ${primaryS}% ${primaryL}%;`);
-  cssVars.push(`  --color-primary-hex: ${brandData.colors.primary};`);
-  cssVars.push(`  --color-secondary: ${secondaryH} ${secondaryS}% ${secondaryL}%;`);
-  cssVars.push(`  --color-secondary-hex: ${brandData.colors.secondary};`);
+  cssVars.push(`  --nst-color-primary: ${primaryH} ${primaryS}% ${primaryL}%;`);
+  cssVars.push(`  --nst-color-primary-hex: ${brandData.colors.primary};`);
+  cssVars.push(`  --nst-color-secondary: ${secondaryH} ${secondaryS}% ${secondaryL}%;`);
+  cssVars.push(`  --nst-color-secondary-hex: ${brandData.colors.secondary};`);
 
   // Core tokens
   Object.entries(coreTokens.colors.neutral).forEach(([key, value]) => {
-    cssVars.push(`  --color-neutral-${key}: ${value};`);
+    cssVars.push(`  --nst-color-neutral-${key}: ${value};`);
   });
 
   Object.entries(coreTokens.spacing).forEach(([key, value]) => {
-    cssVars.push(`  --spacing-${key}: ${value};`);
+    cssVars.push(`  --nst-spacing-${key}: ${value};`);
   });
 
   Object.entries(coreTokens.radii).forEach(([key, value]) => {
-    cssVars.push(`  --radius-${key}: ${value};`);
+    cssVars.push(`  --nst-radius-${key}: ${value};`);
   });
 
-  cssVars.push(`  --font-sans: ${coreTokens.typography.fontFamily.sans.join(', ')};`);
-  cssVars.push(`  --font-mono: ${coreTokens.typography.fontFamily.mono.join(', ')};`);
+  cssVars.push(`  --nst-font-sans: ${coreTokens.typography.fontFamily.sans.join(', ')};`);
+  cssVars.push(`  --nst-font-mono: ${coreTokens.typography.fontFamily.mono.join(', ')};`);
 
   Object.entries(coreTokens.typography.fontSize).forEach(([key, value]) => {
-    cssVars.push(`  --font-size-${key}: ${value};`);
+    cssVars.push(`  --nst-font-size-${key}: ${value};`);
   });
 
   Object.entries(coreTokens.typography.fontWeight).forEach(([key, value]) => {
-    cssVars.push(`  --font-weight-${key}: ${value};`);
+    cssVars.push(`  --nst-font-weight-${key}: ${value};`);
   });
 
   Object.entries(coreTokens.motion.duration).forEach(([key, value]) => {
-    cssVars.push(`  --duration-${key}: ${value};`);
+    cssVars.push(`  --nst-duration-${key}: ${value};`);
   });
 
   Object.entries(coreTokens.motion.easing).forEach(([key, value]) => {
-    cssVars.push(`  --easing-${key}: ${value};`);
+    cssVars.push(`  --nst-easing-${key}: ${value};`);
   });
 
-  cssVars.push(`  --transition-default: ${coreTokens.motion.transition.default};`);
-  cssVars.push(`  --transition-colors: ${coreTokens.motion.transition.colors};`);
+  cssVars.push(`  --nst-transition-default: ${coreTokens.motion.transition.default};`);
+  cssVars.push(`  --nst-transition-colors: ${coreTokens.motion.transition.colors};`);
 
   Object.entries(coreTokens.zIndex).forEach(([key, value]) => {
-    cssVars.push(`  --z-${key}: ${value};`);
+    cssVars.push(`  --nst-z-${key}: ${value};`);
   });
 
   Object.entries(themes.light.colors).forEach(([key, value]) => {
-    cssVars.push(`  --color-${key}: ${value};`);
+    cssVars.push(`  --nst-color-${key}: ${value};`);
   });
 
   const lightCSS = `:root {\n${cssVars.join('\n')}\n}\n\n`;
 
   const darkVars = [];
   Object.entries(themes.dark.colors).forEach(([key, value]) => {
-    darkVars.push(`  --color-${key}: ${value};`);
+    darkVars.push(`  --nst-color-${key}: ${value};`);
   });
 
   const adjustedPrimaryL = Math.min(primaryL + 15, 100);
-  darkVars.push(`  --color-primary: ${primaryH} ${primaryS}% ${adjustedPrimaryL}%;`);
+  darkVars.push(`  --nst-color-primary: ${primaryH} ${primaryS}% ${adjustedPrimaryL}%;`);
 
   const darkCSS = `.dark {\n${darkVars.join('\n')}\n}\n`;
 

@@ -10,33 +10,33 @@ export default function tailwindPlugin() {
       ':root': {
         // Colors
         ...Object.entries(colors.neutral).reduce((acc, [key, value]) => {
-          acc[`--color-neutral-${key}`] = value;
+          acc[`--nst-color-neutral-${key}`] = value;
           return acc;
         }, {} as Record<string, string>),
         
         // Spacing
         ...Object.entries(spacing).reduce((acc, [key, value]) => {
-          acc[`--spacing-${key}`] = value;
+          acc[`--nst-spacing-${key}`] = value;
           return acc;
         }, {} as Record<string, string>),
         
         // Radii
         ...Object.entries(radii).reduce((acc, [key, value]) => {
-          acc[`--radius-${key}`] = value;
+          acc[`--nst-radius-${key}`] = value;
           return acc;
         }, {} as Record<string, string>),
         
         // Typography
-        '--font-sans': typography.fontFamily.sans.join(', '),
-        '--font-mono': typography.fontFamily.mono.join(', '),
+        '--nst-font-sans': typography.fontFamily.sans.join(', '),
+        '--nst-font-mono': typography.fontFamily.mono.join(', '),
         
         // Motion
-        '--transition-default': motion.transition.default,
-        '--transition-colors': motion.transition.colors,
+        '--nst-transition-default': motion.transition.default,
+        '--nst-transition-colors': motion.transition.colors,
         
         // Z-Index
         ...Object.entries(zIndex).reduce((acc, [key, value]) => {
-          acc[`--z-${key}`] = String(value);
+          acc[`--nst-z-${key}`] = String(value);
           return acc;
         }, {} as Record<string, string>),
       },
