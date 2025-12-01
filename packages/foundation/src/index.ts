@@ -1,5 +1,5 @@
 /**
- * @nstech-ds/foundation
+ * @lcpereira/nst-ds-foundation
  * Tokens, themes e brands do Design System NSTech
  */
 

@@ -1,4 +1,4 @@
-# @nstech-ds/foundation
+# @lcpereira/nst-ds-foundation
 
 Tokens, themes e brands do Design System NSTech. Fonte única de verdade para cores, tipografia, spacing, motion e z-index.
 
@@ -7,9 +7,9 @@ Tokens, themes e brands do Design System NSTech. Fonte única de verdade para co
 ### NPM/Yarn
 
 ```bash
-yarn add @nstech-ds/foundation
+yarn add @lcpereira/nst-ds-foundation
 # ou
-npm install @nstech-ds/foundation
+npm install @lcpereira/nst-ds-foundation
 ```
 
 ### CDN (Sem NPM)
@@ -18,11 +18,11 @@ Use diretamente no HTML via CDN:
 
 ```html
 <!-- Escolha o brand que deseja usar -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
 <!-- ou -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nsapps.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nsapps.css">
 <!-- ou -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/ambevtech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/ambevtech.css">
 ```
 
 ## Uso
@@ -30,7 +30,7 @@ Use diretamente no HTML via CDN:
 ### JavaScript/TypeScript (NPM)
 
 ```typescript
-import { colors, spacing, radii, brands, themes } from '@nstech-ds/foundation';
+import { colors, spacing, radii, brands, themes } from '@lcpereira/nst-ds-foundation';
 
 // Usar tokens
 const primaryColor = brands.nstech.colors.primary;
@@ -41,17 +41,17 @@ const spacingValue = spacing[4]; // '1rem'
 
 ```html
 <!-- Via CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
 
 <!-- Via NPM (se estiver usando bundler) -->
-<!-- O caminho será: node_modules/@nstech-ds/foundation/dist/css/nstech.css -->
+<!-- O caminho será: node_modules/@lcpereira/nst-ds-foundation/dist/css/nstech.css -->
 ```
 
 ### Tailwind
 
 ```javascript
 // tailwind.config.js
-import { tailwindConfig, tailwindPlugin } from '@nstech-ds/foundation';
+import { tailwindConfig, tailwindPlugin } from '@lcpereira/nst-ds-foundation';
 
 export default {
   ...tailwindConfig,
@@ -67,11 +67,11 @@ Os brands são detectados automaticamente! Qualquer arquivo `.json` na pasta `sr
 
 - `nstech` - Brand principal
   - CSS: `dist/css/nstech.css`
-  - CDN: `https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css`
+  - CDN: `https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css`
 
 - `nsapps` - Brand NSApps
   - CSS: `dist/css/nsapps.css`
-  - CDN: `https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nsapps.css`
+  - CDN: `https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nsapps.css`
 
 ### Adicionar Novo Brand
 

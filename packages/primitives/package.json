@@ -1,5 +1,5 @@
 {
-  "name": "@nstech-ds/primitives",
+  "name": "@lcpereira/nst-ds-primitives",
   "version": "1.0.0",
   "description": "Web Components universais do Design System NSTech",
   "main": "./dist/index.cjs.js",

@@ -8,6 +8,6 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   outDir: 'dist',
-  external: ['react', 'react-dom', '@nstech-ds/foundation', '@nstech-ds/primitives'],
+  external: ['react', 'react-dom', '@lcpereira/nst-ds-foundation', '@lcpereira/nst-ds-primitives'],
 });
 

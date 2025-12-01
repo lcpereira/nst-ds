@@ -1,5 +1,5 @@
 /**
- * @nstech-ds/react
+ * @lcpereira/nst-ds-react
  * Componentes React completos do Design System NSTech
  */
 

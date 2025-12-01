@@ -38,45 +38,45 @@ Veja [PUBLISH.md](./PUBLISH.md) para mais detalhes.
 
 ## 📚 Pacotes
 
-### @nstech-ds/foundation
+### @lcpereira/nst-ds-foundation
 Tokens, temas e brands. Fonte única de verdade para cores, tipografia, spacing, etc.
 
 **Uso NPM:**
 ```typescript
-import { colors, spacing, brands } from '@nstech-ds/foundation';
-import '@nstech-ds/foundation/dist/css/nstech.css';
+import { colors, spacing, brands } from '@lcpereira/nst-ds-foundation';
+import '@lcpereira/nst-ds-foundation/dist/css/nstech.css';
 ```
 
 **Uso CDN (sem npm):**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
 <!-- ou nsapps.css, ambevtech.css -->
 ```
 
-### @nstech-ds/primitives
+### @lcpereira/nst-ds-primitives
 Web Components universais compatíveis com qualquer stack (React, Angular, Vue, PHP, Vanilla).
 
 **Uso NPM:**
 ```html
-<script type="module" src="node_modules/@nstech-ds/primitives/dist/bundle/nstech-ds.esm.js"></script>
+<script type="module" src="node_modules/@lcpereira/nst-ds-primitives/dist/bundle/nstech-ds.esm.js"></script>
 ```
 
 **Uso CDN (sem npm):**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
 
 <ds-button variant="primary">Clique aqui</ds-button>
 ```
 
-### @nstech-ds/react
+### @lcpereira/nst-ds-react
 Componentes React completos com shadcn, Tailwind e acessibilidade.
 
 **Uso:**
 ```tsx
-import { Button, Input, Card } from '@nstech-ds/react';
-import '@nstech-ds/react/styles';
+import { Button, Input, Card } from '@lcpereira/nst-ds-react';
+import '@lcpereira/nst-ds-react/styles';
 ```
 
 ## 🔧 Tecnologias
@@ -104,17 +104,17 @@ O Design System pode ser usado diretamente via CDN, sem necessidade de npm ou bu
 ### Foundation (CSS)
 ```html
 <!-- Escolha o brand -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
 ```
 
 ### Primitives (Web Components)
 ```html
 <!-- CSS do Foundation primeiro -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
 <!-- CSS dos Primitives -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
 <!-- JavaScript dos Primitives -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
 
 <!-- Usar os componentes -->
 <ds-button variant="primary">Clique aqui</ds-button>

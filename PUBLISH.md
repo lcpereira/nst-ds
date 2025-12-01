@@ -22,7 +22,7 @@ No projeto que vai usar os pacotes:
 
 1. **Criar `.npmrc` no projeto:**
 ```bash
-@nstech-ds:registry=https://npm.pkg.github.com
+@lcpereira:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=SEU_TOKEN
 ```
 
@@ -32,9 +32,9 @@ No projeto que vai usar os pacotes:
 
 3. **Instalar:**
 ```bash
-yarn add @nstech-ds/foundation@latest
-yarn add @nstech-ds/primitives@latest
-yarn add @nstech-ds/react@latest
+yarn add @lcpereira/nst-ds-foundation@latest
+yarn add @lcpereira/nst-ds-primitives@latest
+yarn add @lcpereira/nst-ds-react@latest
 ```
 
 ## Versões
@@ -49,9 +49,9 @@ Os pacotes também estarão disponíveis via CDN do jsDelivr:
 
 ```html
 <!-- Foundation CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/foundation@latest/dist/css/nstech.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/nstech.css">
 
 <!-- Primitives -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@nstech-ds/primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nstech-ds.esm.js"></script>
 ```

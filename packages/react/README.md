@@ -1,20 +1,20 @@
-# @nstech-ds/react
+# @lcpereira/nst-ds-react
 
 Componentes React completos do Design System NSTech. Construído com shadcn/ui, Tailwind CSS e Radix UI.
 
 ## Instalação
 
 ```bash
-yarn add @nstech-ds/react
+yarn add @lcpereira/nst-ds-react
 # ou
-npm install @nstech-ds/react
+npm install @lcpereira/nst-ds-react
 ```
 
 ## Uso
 
 ```tsx
-import { Button, Input, Card, Dialog } from '@nstech-ds/react';
-import '@nstech-ds/react/styles';
+import { Button, Input, Card, Dialog } from '@lcpereira/nst-ds-react';
+import '@lcpereira/nst-ds-react/styles';
 
 function App() {
   return (
@@ -60,11 +60,11 @@ function App() {
 
 ## Integração com Tailwind
 
-Os componentes usam tokens do `@nstech-ds/foundation` via Tailwind. Certifique-se de importar o CSS do foundation:
+Os componentes usam tokens do `@lcpereira/nst-ds-foundation` via Tailwind. Certifique-se de importar o CSS do foundation:
 
 ```tsx
-import '@nstech-ds/foundation/dist/css/nstech.css';
-import '@nstech-ds/react/styles';
+import '@lcpereira/nst-ds-foundation/dist/css/nstech.css';
+import '@lcpereira/nst-ds-react/styles';
 ```
 
 ## Dark Mode

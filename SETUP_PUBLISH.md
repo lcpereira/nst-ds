@@ -13,7 +13,7 @@
 ```bash
 # Criar .npmrc.local (não será commitado)
 cat > .npmrc.local << EOF
-@nstech-ds:registry=https://npm.pkg.github.com
+@lcpereira:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=SEU_TOKEN_AQUI
 EOF
 ```
@@ -51,14 +51,14 @@ No projeto que vai usar os pacotes:
 ```bash
 # Criar .npmrc
 cat > .npmrc << EOF
-@nstech-ds:registry=https://npm.pkg.github.com
+@lcpereira:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=SEU_TOKEN
 EOF
 
 # Instalar
-yarn add @nstech-ds/foundation@latest
-yarn add @nstech-ds/primitives@latest
-yarn add @nstech-ds/react@latest
+yarn add @lcpereira/nst-ds-foundation@latest
+yarn add @lcpereira/nst-ds-primitives@latest
+yarn add @lcpereira/nst-ds-react@latest
 ```
 
 ## Alternativa: NPM Público

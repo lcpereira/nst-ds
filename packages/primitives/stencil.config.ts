@@ -18,7 +18,7 @@ export const config: Config = {
       serviceWorker: null,
     },
     reactOutputTarget({
-      componentCorePackage: '@nstech-ds/primitives',
+      componentCorePackage: '@lcpereira/nst-ds-primitives',
       proxiesFile: '../react/src/components/primitives.tsx',
       includeDefineCustomElements: false,
       includeImportCustomElements: true,

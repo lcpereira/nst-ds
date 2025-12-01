@@ -1,5 +1,5 @@
 {
-  "name": "@nstech-ds/foundation",
+  "name": "@lcpereira/nst-ds-foundation",
   "version": "1.0.0",
   "description": "Tokens, themes e brands do Design System NSTech",
   "main": "./dist/index.js",
