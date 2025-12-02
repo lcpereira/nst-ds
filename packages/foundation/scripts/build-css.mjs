@@ -139,12 +139,23 @@ if (!fs.existsSync(distCssDir)) {
 // Gera CSS para cada brand (mantém compatibilidade com npm)
 Object.entries(brands).forEach(([brandName, brandData]) => {
   const css = generateBrandCSS(brandName, brandData);
+  
+  // Ler estilos compilados
+  const stylesPath = path.join(distCssDir, 'foundation-styles.css');
+  let stylesContent = '';
+  if (fs.existsSync(stylesPath)) {
+    stylesContent = '\n\n' + fs.readFileSync(stylesPath, 'utf-8');
+  }
+  
+  // Combinar CSS variables + estilos
+  const finalCss = css + stylesContent;
+  
   // Manter nome original para npm
   const outputPath = path.join(distCssDir, `${brandName}.css`);
-  fs.writeFileSync(outputPath, css, 'utf-8');
+  fs.writeFileSync(outputPath, finalCss, 'utf-8');
   
   // Gerar também com prefixo nst- para CDN
   const cdnOutputPath = path.join(distCssDir, `nst-${brandName}.css`);
-  fs.writeFileSync(cdnOutputPath, css, 'utf-8');
+  fs.writeFileSync(cdnOutputPath, finalCss, 'utf-8');
 });
 

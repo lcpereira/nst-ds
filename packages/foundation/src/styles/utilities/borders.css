@@ -1,0 +1,28 @@
+/**
+ * Border Utilities
+ */
+
+.border {
+  border: 1px solid var(--nst-color-border) !important;
+}
+
+.border-top {
+  border-top: 1px solid var(--nst-color-border) !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--nst-color-border) !important;
+}
+
+.border-start {
+  border-left: 1px solid var(--nst-color-border) !important;
+}
+
+.border-end {
+  border-right: 1px solid var(--nst-color-border) !important;
+}
+
+.border-0 {
+  border: 0 !important;
+}
+

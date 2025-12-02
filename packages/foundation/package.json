@@ -19,7 +19,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "node scripts/generate-brands.mjs && tsup && node scripts/build-css.mjs && node scripts/generate-bootstrap-classes.mjs",
+    "build": "node scripts/generate-brands.mjs && tsup && node scripts/build-styles.mjs && node scripts/build-css.mjs",
     "build:brands": "node scripts/generate-brands.mjs",
     "build:css": "node scripts/build-css.mjs",
     "dev": "tsup --watch",

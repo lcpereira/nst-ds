@@ -1,0 +1,11 @@
+/**
+ * Color Utilities
+ */
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-primary { background-color: hsl(var(--nst-color-primary)) !important; }
+.bg-secondary { background-color: hsl(var(--nst-color-secondary)) !important; }
+

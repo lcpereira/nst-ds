@@ -1,0 +1,15 @@
+/**
+ * Text Utilities
+ */
+
+.text-start { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-end { text-align: right !important; }
+
+.text-muted {
+  color: var(--nst-color-muted-foreground) !important;
+}
+
+.text-primary { color: hsl(var(--nst-color-primary)) !important; }
+.text-secondary { color: hsl(var(--nst-color-secondary)) !important; }
+
