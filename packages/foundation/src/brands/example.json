@@ -1,0 +1,44 @@
+{
+  "brand": "example",
+  "colors": {
+    "primary": "#ff3d03",
+    "secondary": "#ff7f00"
+  },
+  "components": {
+    "header": {
+      "background": "#ffffff",
+      "text": "#171717",
+      "border": "#e5e5e5"
+    },
+    "footer": {
+      "background": "#ffffff",
+      "text": "#737373",
+      "border": "#e5e5e5"
+    },
+    "navbar": {
+      "background": "#ffffff",
+      "text": "#171717",
+      "brand": "#ff3d03",
+      "link": "#171717",
+      "linkHover": "#ff3d03",
+      "linkActive": "#ff3d03",
+      "border": "#e5e5e5"
+    },
+    "button": {
+      "primary": {
+        "background": "#ff3d03",
+        "text": "#ffffff",
+        "border": "#ff3d03",
+        "hover": {
+          "background": "#e63503"
+        }
+      },
+      "secondary": {
+        "background": "#ff7f00",
+        "text": "#ffffff",
+        "border": "#ff7f00"
+      }
+    }
+  }
+}
+

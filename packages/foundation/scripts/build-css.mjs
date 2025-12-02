@@ -61,17 +61,67 @@ function hexToHsl(hex) {
   return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
 }
 
+function hexToHslString(hex) {
+  const [h, s, l] = hexToHsl(hex);
+  return `${h} ${s}% ${l}%`;
+}
+
 function generateBrandCSS(brandName, brandData) {
   const [primaryH, primaryS, primaryL] = hexToHsl(brandData.colors.primary);
   const [secondaryH, secondaryS, secondaryL] = hexToHsl(brandData.colors.secondary);
 
   const cssVars = [];
 
-  // Brand colors
+  // Brand colors base
   cssVars.push(`  --nst-color-primary: ${primaryH} ${primaryS}% ${primaryL}%;`);
   cssVars.push(`  --nst-color-primary-hex: ${brandData.colors.primary};`);
   cssVars.push(`  --nst-color-secondary: ${secondaryH} ${secondaryS}% ${secondaryL}%;`);
   cssVars.push(`  --nst-color-secondary-hex: ${brandData.colors.secondary};`);
+
+  // Tokens de componentes customizáveis
+  // Brands podem sobrescrever diretamente os tokens definidos em color-tokens.css
+  // Mapeamento: propriedade JSON -> nome do token CSS
+  const componentTokenMap = {
+    'header.background': '--nst-color-header-bg',
+    'header.text': '--nst-color-header-text',
+    'header.border': '--nst-color-header-border',
+    'footer.background': '--nst-color-footer-bg',
+    'footer.text': '--nst-color-footer-text',
+    'footer.border': '--nst-color-footer-border',
+    'navbar.background': '--nst-color-navbar-bg',
+    'navbar.text': '--nst-color-navbar-text',
+    'navbar.brand': '--nst-color-navbar-brand',
+    'navbar.link': '--nst-color-navbar-link',
+    'navbar.linkHover': '--nst-color-navbar-link-hover',
+    'navbar.linkActive': '--nst-color-navbar-link-active',
+    'navbar.border': '--nst-color-navbar-border',
+    'button.primary.background': '--nst-color-button-primary-bg',
+    'button.primary.text': '--nst-color-button-primary-text',
+    'button.primary.border': '--nst-color-button-primary-border',
+    'button.primary.hover.background': '--nst-color-button-primary-hover-bg',
+    'button.primary.hover.text': '--nst-color-button-primary-hover-text',
+    'button.primary.hover.border': '--nst-color-button-primary-hover-border',
+    'button.secondary.background': '--nst-color-button-secondary-bg',
+    'button.secondary.text': '--nst-color-button-secondary-text',
+    'button.secondary.border': '--nst-color-button-secondary-border',
+    'button.secondary.hover.background': '--nst-color-button-secondary-hover-bg',
+    'button.secondary.hover.text': '--nst-color-button-secondary-hover-text',
+    'button.secondary.hover.border': '--nst-color-button-secondary-hover-border',
+  };
+
+  // Função auxiliar para obter valor aninhado do objeto
+  function getNestedValue(obj, path) {
+    return path.split('.').reduce((current, key) => current?.[key], obj);
+  }
+
+  // Itera sobre o mapeamento e adiciona tokens customizados
+  // Aceita qualquer formato de cor (hex, hsl, rgb, var, etc) - sem conversão
+  Object.entries(componentTokenMap).forEach(([jsonPath, cssToken]) => {
+    const value = getNestedValue(brandData.components, jsonPath);
+    if (value !== undefined && value !== null) {
+      cssVars.push(`  ${cssToken}: ${value};`);
+    }
+  });
 
   // Core tokens
   Object.entries(coreTokens.colors.neutral).forEach(([key, value]) => {

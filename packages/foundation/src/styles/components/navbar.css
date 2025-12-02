@@ -19,12 +19,12 @@
   font-weight: var(--nst-font-weight-semibold);
   text-decoration: none;
   white-space: nowrap;
-  color: var(--nst-color-primary);
+  color: var(--nst-color-navbar-brand);
 }
 
 .navbar-brand:hover {
   text-decoration: none;
-  color: var(--nst-color-primary);
+  color: var(--nst-color-navbar-brand);
 }
 
 .navbar-nav {
@@ -43,11 +43,11 @@
 .navbar-text {
   padding-top: var(--nst-spacing-2);
   padding-bottom: var(--nst-spacing-2);
-  color: var(--nst-color-foreground);
+  color: var(--nst-color-navbar-text);
 }
 
 .navbar-text a {
-  color: hsl(var(--nst-color-primary));
+  color: var(--nst-color-navbar-link-hover);
 }
 
 .navbar-toggler {
@@ -98,30 +98,31 @@
 
 /* Navbar Light */
 .navbar-light {
-  color: var(--nst-color-foreground);
-  background-color: var(--nst-color-background);
+  color: var(--nst-color-navbar-text);
+  background-color: var(--nst-color-navbar-bg);
+  border-color: var(--nst-color-navbar-border);
 }
 
 .navbar-light .navbar-brand {
-  color: var(--nst-color-primary);
+  color: var(--nst-color-navbar-brand);
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--nst-color-foreground);
+  color: var(--nst-color-navbar-link);
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-  color: hsl(var(--nst-color-primary));
+  color: var(--nst-color-navbar-link-hover);
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-  color: hsl(var(--nst-color-primary));
+  color: var(--nst-color-navbar-link-active);
 }
 
 .navbar-light .navbar-toggler {
-  color: var(--nst-color-foreground);
-  border-color: var(--nst-color-border);
+  color: var(--nst-color-navbar-text);
+  border-color: var(--nst-color-navbar-border);
 }
 
 .navbar-light .navbar-toggler-icon {

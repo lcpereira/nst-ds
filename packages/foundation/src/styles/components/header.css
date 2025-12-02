@@ -1,0 +1,10 @@
+/**
+ * Header Component
+ */
+
+header {
+  background-color: var(--nst-color-header-bg);
+  color: var(--nst-color-header-text);
+  border-bottom: 1px solid var(--nst-color-header-border);
+}
+

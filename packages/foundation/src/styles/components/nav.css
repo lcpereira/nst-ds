@@ -13,7 +13,7 @@
 .nav-link {
   display: block;
   padding: var(--nst-spacing-2) var(--nst-spacing-4);
-  color: var(--nst-color-foreground);
+  color: var(--nst-color-navbar-link);
   text-decoration: none;
   transition: var(--nst-transition-colors);
   background-color: transparent;
@@ -22,12 +22,12 @@
 
 .nav-link:hover,
 .nav-link:focus {
-  color: hsl(var(--nst-color-primary));
+  color: var(--nst-color-navbar-link-hover);
   text-decoration: none;
 }
 
 .nav-link.active {
-  color: hsl(var(--nst-color-primary));
+  color: var(--nst-color-navbar-link-active);
   font-weight: var(--nst-font-weight-medium);
 }
 

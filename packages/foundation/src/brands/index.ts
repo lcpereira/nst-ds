@@ -13,10 +13,11 @@
  * }
  */
 
+import example from './example.json';
 import theme1 from './theme1.json';
 import theme2 from './theme2.json';
 
-export type Brand = 'theme1' | 'theme2';
+export type Brand = 'example' | 'theme1' | 'theme2';
 
 export interface BrandColors {
   brand: Brand;
@@ -27,6 +28,7 @@ export interface BrandColors {
 }
 
 export const brands = {
+  example,
   theme1,
   theme2,
 } as const;

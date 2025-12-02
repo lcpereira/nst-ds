@@ -89,6 +89,7 @@ ul, ol {
 footer {
   padding: var(--nst-spacing-4) 0;
   text-align: center;
-  color: var(--nst-color-muted-foreground);
-  background-color: var(--nst-color-background);
+  color: var(--nst-color-footer-text);
+  background-color: var(--nst-color-footer-bg);
+  border-top: 1px solid var(--nst-color-footer-border);
 }
