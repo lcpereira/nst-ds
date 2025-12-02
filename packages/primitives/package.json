@@ -12,6 +12,13 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs.js"
     },
+    "./components": {
+      "types": "./dist/types/components.d.ts"
+    },
+    "./components/*.js": {
+      "import": "./dist/components/*.js",
+      "types": "./dist/components/*.d.ts"
+    },
     "./bundle/nst-ds.css": "./dist/bundle/nst-ds.css",
     "./bundle/nst-ds.esm.js": "./dist/bundle/nst-ds.esm.js",
     "./loader": "./dist/loader/index.js"
@@ -56,4 +63,3 @@
     "registry": "https://npm.pkg.github.com"
   }
 }
-

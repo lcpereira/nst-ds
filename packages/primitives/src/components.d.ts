@@ -6,19 +6,216 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DsBadge {
+        /**
+          * @default 'md'
+         */
+        "size": 'sm' | 'md';
+        /**
+          * @default 'default'
+         */
+        "variant": 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error';
+    }
+    interface DsButton {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default 'md'
+         */
+        "size": 'sm' | 'md' | 'lg';
+        /**
+          * @default 'button'
+         */
+        "type": 'button' | 'submit' | 'reset';
+        /**
+          * @default 'primary'
+         */
+        "variant": 'primary' | 'secondary' | 'outline' | 'ghost';
+    }
+    interface DsCard {
+        /**
+          * @default 'md'
+         */
+        "padding": 'sm' | 'md' | 'lg';
+    }
+    interface DsInput {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default ''
+         */
+        "name": string;
+        /**
+          * @default ''
+         */
+        "placeholder": string;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 'text'
+         */
+        "type": string;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
+    interface DsSpinner {
+        /**
+          * @default 'md'
+         */
+        "size": 'sm' | 'md' | 'lg';
+    }
+}
+export interface DsInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDsInputElement;
 }
 declare global {
+    interface HTMLDsBadgeElement extends Components.DsBadge, HTMLStencilElement {
+    }
+    var HTMLDsBadgeElement: {
+        prototype: HTMLDsBadgeElement;
+        new (): HTMLDsBadgeElement;
+    };
+    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
+    }
+    var HTMLDsButtonElement: {
+        prototype: HTMLDsButtonElement;
+        new (): HTMLDsButtonElement;
+    };
+    interface HTMLDsCardElement extends Components.DsCard, HTMLStencilElement {
+    }
+    var HTMLDsCardElement: {
+        prototype: HTMLDsCardElement;
+        new (): HTMLDsCardElement;
+    };
+    interface HTMLDsInputElementEventMap {
+        "inputChange": string;
+        "inputFocus": void;
+        "inputBlur": void;
+    }
+    interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLDsInputElementEventMap>(type: K, listener: (this: HTMLDsInputElement, ev: DsInputCustomEvent<HTMLDsInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLDsInputElementEventMap>(type: K, listener: (this: HTMLDsInputElement, ev: DsInputCustomEvent<HTMLDsInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLDsInputElement: {
+        prototype: HTMLDsInputElement;
+        new (): HTMLDsInputElement;
+    };
+    interface HTMLDsSpinnerElement extends Components.DsSpinner, HTMLStencilElement {
+    }
+    var HTMLDsSpinnerElement: {
+        prototype: HTMLDsSpinnerElement;
+        new (): HTMLDsSpinnerElement;
+    };
     interface HTMLElementTagNameMap {
+        "ds-badge": HTMLDsBadgeElement;
+        "ds-button": HTMLDsButtonElement;
+        "ds-card": HTMLDsCardElement;
+        "ds-input": HTMLDsInputElement;
+        "ds-spinner": HTMLDsSpinnerElement;
     }
 }
 declare namespace LocalJSX {
+    interface DsBadge {
+        /**
+          * @default 'md'
+         */
+        "size"?: 'sm' | 'md';
+        /**
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error';
+    }
+    interface DsButton {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default 'md'
+         */
+        "size"?: 'sm' | 'md' | 'lg';
+        /**
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * @default 'primary'
+         */
+        "variant"?: 'primary' | 'secondary' | 'outline' | 'ghost';
+    }
+    interface DsCard {
+        /**
+          * @default 'md'
+         */
+        "padding"?: 'sm' | 'md' | 'lg';
+    }
+    interface DsInput {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default ''
+         */
+        "name"?: string;
+        "onInputBlur"?: (event: DsInputCustomEvent<void>) => void;
+        "onInputChange"?: (event: DsInputCustomEvent<string>) => void;
+        "onInputFocus"?: (event: DsInputCustomEvent<void>) => void;
+        /**
+          * @default ''
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 'text'
+         */
+        "type"?: string;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface DsSpinner {
+        /**
+          * @default 'md'
+         */
+        "size"?: 'sm' | 'md' | 'lg';
+    }
     interface IntrinsicElements {
+        "ds-badge": DsBadge;
+        "ds-button": DsButton;
+        "ds-card": DsCard;
+        "ds-input": DsInput;
+        "ds-spinner": DsSpinner;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ds-badge": LocalJSX.DsBadge & JSXBase.HTMLAttributes<HTMLDsBadgeElement>;
+            "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            "ds-card": LocalJSX.DsCard & JSXBase.HTMLAttributes<HTMLDsCardElement>;
+            "ds-input": LocalJSX.DsInput & JSXBase.HTMLAttributes<HTMLDsInputElement>;
+            "ds-spinner": LocalJSX.DsSpinner & JSXBase.HTMLAttributes<HTMLDsSpinnerElement>;
         }
     }
 }
