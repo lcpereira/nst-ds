@@ -38,6 +38,6 @@
 }
 
 .nav-item {
-  margin-bottom: 0;
+  margin: 0 var(--nst-spacing-2);
 }
 

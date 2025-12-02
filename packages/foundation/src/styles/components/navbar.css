@@ -19,12 +19,12 @@
   font-weight: var(--nst-font-weight-semibold);
   text-decoration: none;
   white-space: nowrap;
-  color: var(--nst-color-foreground);
+  color: var(--nst-color-primary);
 }
 
 .navbar-brand:hover {
   text-decoration: none;
-  color: var(--nst-color-foreground);
+  color: var(--nst-color-primary);
 }
 
 .navbar-nav {
@@ -48,10 +48,6 @@
 
 .navbar-text a {
   color: hsl(var(--nst-color-primary));
-}
-
-.navbar-text a:hover {
-  color: hsl(var(--nst-color-primary) / 0.9);
 }
 
 .navbar-toggler {
@@ -107,7 +103,7 @@
 }
 
 .navbar-light .navbar-brand {
-  color: var(--nst-color-foreground);
+  color: var(--nst-color-primary);
 }
 
 .navbar-light .navbar-nav .nav-link {
