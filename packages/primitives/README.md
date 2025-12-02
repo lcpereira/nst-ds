@@ -25,13 +25,13 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
   <title>Minha App</title>
   
   <!-- 1. Importar CSS do Foundation (escolha o brand) -->
-  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/theme1.css">
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
   
   <!-- 2. Importar CSS dos Primitives -->
-  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nst-ds.css">
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/nst-ds.css">
   
-  <!-- 3. Importar JavaScript dos Primitives -->
-  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nst-ds.esm.js"></script>
+  <!-- 3. Importar JavaScript dos Primitives - IMPORTANTE: Use type="module" -->
+  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 </head>
 <body>
   <!-- Usar os componentes -->
@@ -53,7 +53,7 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
 <!-- Primitives CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.css">
 
-<!-- Primitives JS -->
+<!-- Primitives JS - IMPORTANTE: Use type="module" -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.esm.js"></script>
 ```
 
@@ -65,13 +65,20 @@ Veja [CDN.md](../../CDN.md) para mais detalhes sobre as opções de CDN.
 
 **GitHub Pages:**
 ```html
-<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/theme1.css">
-<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/bundle/nst-ds.css">
-<script type="module" src="https://lcpereira.github.io/nst-ds/primitives/bundle/nst-ds.esm.js"></script>
+<!-- Foundation CSS -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
+
+<!-- Primitives CSS -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/nst-ds.css">
+
+<!-- Primitives JS - IMPORTANTE: Use type="module" e nst-ds.esm.js -->
+<script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 
 <!-- Usar os componentes -->
 <ds-button variant="primary">Clique aqui</ds-button>
 ```
+
+**⚠️ IMPORTANTE:** Sempre use `type="module"` no script tag e o arquivo `nst-ds.esm.js`. Sem isso, você receberá o erro: "Cannot use import statement outside a module"
 
 **jsDelivr (alternativa):**
 ```html
@@ -121,16 +128,25 @@ function App() {
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Via CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-foundation@latest/dist/css/theme1.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nst-ds.css">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@lcpereira/nst-ds-primitives@latest/dist/bundle/nst-ds.esm.js"></script>
+  <!-- Foundation CSS -->
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
+  
+  <!-- Primitives CSS -->
+  <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/nst-ds.css">
+  
+  <!-- Primitives JS - IMPORTANTE: Use type="module" e nst-ds.esm.js -->
+  <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 </head>
 <body>
   <?php echo '<ds-button variant="primary">Botão PHP</ds-button>'; ?>
 </body>
 </html>
 ```
+
+**⚠️ IMPORTANTE para PHP:**
+- Sempre use `type="module"` no script tag
+- Use o arquivo `nst-ds.esm.js` (não `nst-ds.js`)
+- Sem `type="module"`, você receberá: "Cannot use import statement outside a module"
 
 ## Componentes Disponíveis
 
@@ -160,16 +176,18 @@ function App() {
 - `dist/loader/index.js` - Loader para React
 
 ### Via CDN (GitHub Pages)
-- `https://lcpereira.github.io/nst-ds/primitives/bundle/nst-ds.css`
-- `https://lcpereira.github.io/nst-ds/primitives/bundle/nst-ds.esm.js`
+- CSS: `https://lcpereira.github.io/nst-ds/primitives/nst-ds.css`
+- JS: `https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js` ⚠️ Use com `type="module"`
 
 ### Via CDN (jsDelivr - alternativa)
-- `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.css`
-- `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.esm.js`
+- CSS: `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.css`
+- JS: `https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.esm.js` ⚠️ Use com `type="module"`
 
 ## Notas
 
-- Todos os componentes herdam tokens do `@lcpereira/nst-ds-foundation` via CSS variables
-- Funciona em qualquer navegador moderno (com suporte a Custom Elements)
+- **IMPORTANTE:** Sempre use `type="module"` no script tag e o arquivo `nst-ds.esm.js`
+- Todos os componentes herdam tokens do `@lcpereira/nst-ds-foundation` via CSS variables (com prefixo `--nst-`)
+- Funciona em qualquer navegador moderno (com suporte a ES Modules e Custom Elements)
 - Não requer build step quando usado via CDN
 - Compatível com PHP, Ruby, Python, Java e qualquer stack que renderize HTML
+- Se receber erro "Cannot use import statement outside a module", verifique se está usando `type="module"` e `nst-ds.esm.js`
