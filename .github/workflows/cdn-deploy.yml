@@ -52,6 +52,8 @@ jobs:
           if [ -d "packages/primitives/dist/bundle" ]; then
             # Copiar CSS principal
             cp packages/primitives/dist/bundle/nst-ds.css cdn/primitives/ 2>/dev/null || true
+            # Copiar JS principal (ESM)
+            cp packages/primitives/dist/bundle/nst-ds.esm.js cdn/primitives/ 2>/dev/null || true
             # Copiar também nst-ds.js (alias, mas usar nst-ds.esm.js é recomendado)
             cp packages/primitives/dist/bundle/nst-ds.js cdn/primitives/ 2>/dev/null || true
             # Copiar chunks (arquivos p-*.js)

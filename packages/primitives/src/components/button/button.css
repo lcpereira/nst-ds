@@ -3,16 +3,16 @@
 }
 
 button {
-  font-family: var(--font-sans, system-ui, sans-serif);
-  font-weight: var(--font-weight-medium, 500);
-  border-radius: var(--radius-md, 0.375rem);
+  font-family: var(--nst-font-sans, system-ui, sans-serif);
+  font-weight: var(--nst-font-weight-medium, 500);
+  border-radius: var(--nst-radius-md, 0.375rem);
   border: none;
   cursor: pointer;
-  transition: var(--transition-colors, all 200ms);
+  transition: var(--nst-transition-colors, all 200ms);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-2, 0.5rem);
+  gap: var(--nst-spacing-2, 0.5rem);
 }
 
 button:disabled {
@@ -22,55 +22,55 @@ button:disabled {
 
 /* Sizes */
 .btn-sm {
-  padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
-  font-size: var(--font-size-sm, 0.875rem);
+  padding: var(--nst-spacing-2, 0.5rem) var(--nst-spacing-4, 1rem);
+  font-size: var(--nst-font-size-sm, 0.875rem);
 }
 
 .btn-md {
-  padding: var(--spacing-3, 0.75rem) var(--spacing-6, 1.5rem);
-  font-size: var(--font-size-base, 1rem);
+  padding: var(--nst-spacing-3, 0.75rem) var(--nst-spacing-6, 1.5rem);
+  font-size: var(--nst-font-size-base, 1rem);
 }
 
 .btn-lg {
-  padding: var(--spacing-4, 1rem) var(--spacing-8, 2rem);
-  font-size: var(--font-size-lg, 1.125rem);
+  padding: var(--nst-spacing-4, 1rem) var(--nst-spacing-8, 2rem);
+  font-size: var(--nst-font-size-lg, 1.125rem);
 }
 
 /* Variants */
 .btn-primary {
-  background-color: hsl(var(--color-primary, 217 91% 60%));
+  background-color: hsl(var(--nst-color-primary, 217 91% 60%));
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: hsl(var(--color-primary, 217 91% 60%) / 0.9);
+  background-color: hsl(var(--nst-color-primary, 217 91% 60%) / 0.9);
 }
 
 .btn-secondary {
-  background-color: hsl(var(--color-secondary, 188 85% 53%));
+  background-color: hsl(var(--nst-color-secondary, 188 85% 53%));
   color: white;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: hsl(var(--color-secondary, 188 85% 53%) / 0.9);
+  background-color: hsl(var(--nst-color-secondary, 188 85% 53%) / 0.9);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: hsl(var(--color-primary, 217 91% 60%));
-  border: 1px solid hsl(var(--color-primary, 217 91% 60%));
+  color: hsl(var(--nst-color-primary, 217 91% 60%));
+  border: 1px solid hsl(var(--nst-color-primary, 217 91% 60%));
 }
 
 .btn-outline:hover:not(:disabled) {
-  background-color: hsl(var(--color-primary, 217 91% 60%) / 0.1);
+  background-color: hsl(var(--nst-color-primary, 217 91% 60%) / 0.1);
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: var(--color-foreground, #171717);
+  color: var(--nst-color-foreground, #171717);
 }
 
 .btn-ghost:hover:not(:disabled) {
-  background-color: var(--color-muted, #f5f5f5);
+  background-color: var(--nst-color-muted, #f5f5f5);
 }
 

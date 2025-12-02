@@ -3,21 +3,21 @@
 }
 
 .card {
-  background-color: var(--color-background, #ffffff);
-  border: 1px solid var(--color-border, #e5e5e5);
-  border-radius: var(--radius-lg, 0.5rem);
+  background-color: var(--nst-color-background, #ffffff);
+  border: 1px solid var(--nst-color-border, #e5e5e5);
+  border-radius: var(--nst-radius-lg, 0.5rem);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 
 .card-sm {
-  padding: var(--spacing-3, 0.75rem);
+  padding: var(--nst-spacing-3, 0.75rem);
 }
 
 .card-md {
-  padding: var(--spacing-4, 1rem);
+  padding: var(--nst-spacing-4, 1rem);
 }
 
 .card-lg {
-  padding: var(--spacing-6, 1.5rem);
+  padding: var(--nst-spacing-6, 1.5rem);
 }
 
