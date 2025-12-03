@@ -153,6 +153,11 @@ function generateBrandCSS(brandName, brandData) {
     'button.outlineDanger': '--nst-color-btn-outline-danger',
     'button.outlineDangerHoverBackground': '--nst-color-btn-outline-danger-hover-bg',
     'button.outlineDangerHoverText': '--nst-color-btn-outline-danger-hover-text',
+    'footer.background': '--nst-color-footer-bg',
+    'footer.text': '--nst-color-footer-text',
+    'footer.border': '--nst-color-footer-border',
+    'body.background': '--nst-color-body-bg',
+    'body.text': '--nst-color-body-text',
   };
 
   // Processa componentes customizados (colors.components ou components na raiz)

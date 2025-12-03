@@ -28,8 +28,8 @@ body {
   font-size: var(--nst-font-size-base);
   font-weight: var(--nst-font-weight-normal);
   line-height: 1.5;
-  color: var(--nst-color-foreground);
-  background-color: var(--nst-color-background);
+  color: var(--nst-color-body-text, var(--nst-color-foreground));
+  background-color: var(--nst-color-body-bg, var(--nst-color-background));
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

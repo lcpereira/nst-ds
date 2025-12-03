@@ -27,5 +27,14 @@
     "outlineDanger": "hsl(var(--nst-color-error))",
     "outlineDangerHoverBackground": "hsl(var(--nst-color-error))",
     "outlineDangerHoverText": "#ffffff"
+  },
+  "footer": {
+    "background": "var(--nst-color-background)",
+    "text": "var(--nst-color-muted-foreground)",
+    "border": "var(--nst-color-border)"
+  },
+  "body": {
+    "background": "var(--nst-color-background)",
+    "text": "var(--nst-color-foreground)"
   }
 }

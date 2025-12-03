@@ -52,6 +52,15 @@
         "outlineDanger": "#ef4444",
         "outlineDangerHoverBackground": "#ef4444",
         "outlineDangerHoverText": "#ffffff"
+      },
+      "footer": {
+        "background": "#2e333d",
+        "text": "#fafafa",
+        "border": "#2e333d"
+      },
+      "body": {
+        "background": "#ffffff",
+        "text": "#171717"
       }
     }
   }
