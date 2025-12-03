@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--nst-spacing-2) var(--nst-spacing-4);
+  height: 100px;
 }
 
 .navbar-brand {

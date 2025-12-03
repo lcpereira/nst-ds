@@ -94,4 +94,7 @@ footer {
   color: var(--nst-color-footer-text);
   background-color: var(--nst-color-footer-bg);
   border-top: 1px solid var(--nst-color-footer-border);
+  height: 100px;
+  align-items: center;
+  display: flex;
 }
