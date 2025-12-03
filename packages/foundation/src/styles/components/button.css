@@ -24,6 +24,7 @@
 
 .btn:hover {
   text-decoration: none;
+  color: var(--nst-color-btn-text-hover, var(--nst-color-btn-text));
 }
 
 .btn:focus {

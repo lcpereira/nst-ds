@@ -145,6 +145,7 @@ function generateBrandCSS(brandName, brandData) {
     'navLink.disabled': '--nst-color-nav-link-disabled',
     'button.background': '--nst-color-btn-bg',
     'button.text': '--nst-color-btn-text',
+    'button.textHover': '--nst-color-btn-text-hover',
     'button.border': '--nst-color-btn-border',
     'button.outlinePrimary': '--nst-color-btn-outline-primary',
     'button.outlinePrimaryHoverBackground': '--nst-color-btn-outline-primary-hover-bg',

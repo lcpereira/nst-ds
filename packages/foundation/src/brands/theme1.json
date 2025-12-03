@@ -44,7 +44,8 @@
       "button": {
         "background": "#ff3d03",
         "text": "#fafafa",
-        "border": "#e5e5e5",
+        "textHover": "#ffffff",
+        "border": "#ff3d03",
         "outlinePrimary": "#ff3d03",
         "outlinePrimaryHoverBackground": "#ff3d03",
         "outlinePrimaryHoverText": "#ffffff",

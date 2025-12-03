@@ -19,6 +19,7 @@
   "button": {
     "background": "transparent",
     "text": "var(--nst-color-foreground)",
+    "textHover": "var(--nst-color-foreground)",
     "border": "var(--nst-color-border)",
     "outlinePrimary": "hsl(var(--nst-color-primary))",
     "outlinePrimaryHoverBackground": "hsl(var(--nst-color-primary))",
