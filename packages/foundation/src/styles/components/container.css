@@ -5,10 +5,14 @@
 .container,
 .container-fluid {
   width: 100%;
-  padding-right: var(--nst-spacing-4);
-  padding-left: var(--nst-spacing-4);
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--nst-spacing-4);
+  padding-right: var(--nst-spacing-4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 576px) {

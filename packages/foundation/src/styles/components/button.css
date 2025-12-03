@@ -20,6 +20,7 @@
   background-color: var(--nst-color-btn-bg);
   color: var(--nst-color-btn-text);
   border-color: var(--nst-color-btn-border);
+  min-width: 100px;
 }
 
 .btn:hover {
