@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "background": "var(--nst-color-background)",
+    "text": "var(--nst-color-foreground)",
+    "border": "var(--nst-color-border)",
+    "brand": "hsl(var(--nst-color-primary))",
+    "brandHover": "hsl(var(--nst-color-primary) / 0.9)"
+  },
+  "navItem": {
+    "background": "transparent",
+    "text": "var(--nst-color-foreground)"
+  },
+  "navLink": {
+    "default": "var(--nst-color-foreground)",
+    "hover": "hsl(var(--nst-color-primary))",
+    "active": "hsl(var(--nst-color-primary))",
+    "disabled": "var(--nst-color-muted-foreground)"
+  },
+  "button": {
+    "background": "transparent",
+    "text": "var(--nst-color-foreground)",
+    "border": "var(--nst-color-border)",
+    "outlinePrimary": "hsl(var(--nst-color-primary))",
+    "outlinePrimaryHoverBackground": "hsl(var(--nst-color-primary))",
+    "outlinePrimaryHoverText": "#ffffff",
+    "outlineDanger": "hsl(var(--nst-color-error))",
+    "outlineDangerHoverBackground": "hsl(var(--nst-color-error))",
+    "outlineDangerHoverText": "#ffffff"
+  }
+}

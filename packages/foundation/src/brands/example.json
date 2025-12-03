@@ -2,43 +2,56 @@
   "brand": "example",
   "colors": {
     "primary": "#ff3d03",
-    "secondary": "#ff7f00"
-  },
-  "components": {
-    "header": {
-      "background": "#ffffff",
-      "text": "#171717",
-      "border": "#e5e5e5"
+    "secondary": "#ff7f00",
+    "success": "#10b981",
+    "error": "#ef4444",
+    "warning": "#f59e0b",
+    "info": "#3b82f6",
+    "background": "#ffffff",
+    "foreground": "#171717",
+    "muted": "#f5f5f5",
+    "mutedForeground": "#737373",
+    "border": "#e5e5e5",
+    "input": "#e5e5e5",
+    "ring": "#ff3d03",
+    "dark": {
+      "background": "#0a0a0a",
+      "foreground": "#fafafa",
+      "muted": "#171717",
+      "mutedForeground": "#a3a3a3",
+      "border": "#262626",
+      "input": "#262626",
+      "ring": "#ff7f00"
     },
-    "footer": {
-      "background": "#ffffff",
-      "text": "#737373",
-      "border": "#e5e5e5"
-    },
-    "navbar": {
-      "background": "#ffffff",
-      "text": "#171717",
-      "brand": "#ff3d03",
-      "link": "#171717",
-      "linkHover": "#ff3d03",
-      "linkActive": "#ff3d03",
-      "border": "#e5e5e5"
-    },
-    "button": {
-      "primary": {
-        "background": "#ff3d03",
-        "text": "#ffffff",
-        "border": "#ff3d03",
-        "hover": {
-          "background": "#e63503"
-        }
+    "components": {
+      "navbar": {
+        "background": "#ffffff",
+        "text": "#171717",
+        "border": "#e5e5e5",
+        "brand": "#ff3d03",
+        "brandHover": "#e63503"
       },
-      "secondary": {
-        "background": "#ff7f00",
-        "text": "#ffffff",
-        "border": "#ff7f00"
+      "navItem": {
+        "background": "transparent",
+        "text": "#171717"
+      },
+      "navLink": {
+        "default": "#171717",
+        "hover": "#ff3d03",
+        "active": "#ff3d03",
+        "disabled": "#737373"
+      },
+      "button": {
+        "background": "transparent",
+        "text": "#171717",
+        "border": "#e5e5e5",
+        "outlinePrimary": "#ff3d03",
+        "outlinePrimaryHoverBackground": "#ff3d03",
+        "outlinePrimaryHoverText": "#ffffff",
+        "outlineDanger": "#ef4444",
+        "outlineDangerHoverBackground": "#ef4444",
+        "outlineDangerHoverText": "#ffffff"
       }
     }
   }
 }
-

@@ -10,3 +10,7 @@
 .d-inline-flex { display: inline-flex !important; }
 .d-grid { display: grid !important; }
 
+.collapse:not(.show) {
+  display: none;
+}
+

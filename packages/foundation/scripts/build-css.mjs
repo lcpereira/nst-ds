@@ -36,6 +36,12 @@ const themes = {
 
 const coreTokens = readJSON(path.join(__dirname, '../src/tokens/core/tokens.json'));
 
+// Carrega componentes padrão (pode não existir)
+const componentsPath = path.join(__dirname, '../src/tokens/semantic/components.json');
+const defaultComponents = fs.existsSync(componentsPath) 
+  ? readJSON(componentsPath) 
+  : {};
+
 function hexToHsl(hex) {
   const r = parseInt(hex.slice(1, 3), 16) / 255;
   const g = parseInt(hex.slice(3, 5), 16) / 255;
@@ -67,63 +73,112 @@ function hexToHslString(hex) {
 }
 
 function generateBrandCSS(brandName, brandData) {
-  const [primaryH, primaryS, primaryL] = hexToHsl(brandData.colors.primary);
-  const [secondaryH, secondaryS, secondaryL] = hexToHsl(brandData.colors.secondary);
+  const brandColors = brandData.colors || {};
+  
+  // Processar primary e secondary (obrigatórios)
+  const [primaryH, primaryS, primaryL] = hexToHsl(brandColors.primary);
+  const [secondaryH, secondaryS, secondaryL] = hexToHsl(brandColors.secondary);
 
   const cssVars = [];
 
-  // Brand colors base
+  // Brand colors base (primary e secondary)
   cssVars.push(`  --nst-color-primary: ${primaryH} ${primaryS}% ${primaryL}%;`);
-  cssVars.push(`  --nst-color-primary-hex: ${brandData.colors.primary};`);
+  cssVars.push(`  --nst-color-primary-hex: ${brandColors.primary};`);
   cssVars.push(`  --nst-color-secondary: ${secondaryH} ${secondaryS}% ${secondaryL}%;`);
-  cssVars.push(`  --nst-color-secondary-hex: ${brandData.colors.secondary};`);
-
-  // Tokens de componentes customizáveis
-  // Brands podem sobrescrever diretamente os tokens definidos em color-tokens.css
-  // Mapeamento: propriedade JSON -> nome do token CSS
-  const componentTokenMap = {
-    'header.background': '--nst-color-header-bg',
-    'header.text': '--nst-color-header-text',
-    'header.border': '--nst-color-header-border',
-    'footer.background': '--nst-color-footer-bg',
-    'footer.text': '--nst-color-footer-text',
-    'footer.border': '--nst-color-footer-border',
-    'navbar.background': '--nst-color-navbar-bg',
-    'navbar.text': '--nst-color-navbar-text',
-    'navbar.brand': '--nst-color-navbar-brand',
-    'navbar.link': '--nst-color-navbar-link',
-    'navbar.linkHover': '--nst-color-navbar-link-hover',
-    'navbar.linkActive': '--nst-color-navbar-link-active',
-    'navbar.border': '--nst-color-navbar-border',
-    'button.primary.background': '--nst-color-button-primary-bg',
-    'button.primary.text': '--nst-color-button-primary-text',
-    'button.primary.border': '--nst-color-button-primary-border',
-    'button.primary.hover.background': '--nst-color-button-primary-hover-bg',
-    'button.primary.hover.text': '--nst-color-button-primary-hover-text',
-    'button.primary.hover.border': '--nst-color-button-primary-hover-border',
-    'button.secondary.background': '--nst-color-button-secondary-bg',
-    'button.secondary.text': '--nst-color-button-secondary-text',
-    'button.secondary.border': '--nst-color-button-secondary-border',
-    'button.secondary.hover.background': '--nst-color-button-secondary-hover-bg',
-    'button.secondary.hover.text': '--nst-color-button-secondary-hover-text',
-    'button.secondary.hover.border': '--nst-color-button-secondary-hover-border',
+  cssVars.push(`  --nst-color-secondary-hex: ${brandColors.secondary};`);
+  
+  // Cores semânticas (success, error, warning, info)
+  // Se definidas no brand, usa elas; senão usa os defaults
+  const semanticColorsMap = {
+    success: brandColors.success || '#059669',
+    error: brandColors.error || '#dc2626',
+    warning: brandColors.warning || '#d97706',
+    info: brandColors.info || '#2563eb',
   };
+  
+  Object.entries(semanticColorsMap).forEach(([key, hexValue]) => {
+    const [h, s, l] = hexToHsl(hexValue);
+    cssVars.push(`  --nst-color-${key}: ${h} ${s}% ${l}%;`);
+  });
+  
+  // Cores do tema (background, foreground, muted, etc.)
+  // Se definidas no brand, usa elas; senão usa os defaults do theme light
+  const themeColorsMap = {
+    background: brandColors.background || themes.light.colors.background,
+    foreground: brandColors.foreground || themes.light.colors.foreground,
+    muted: brandColors.muted || themes.light.colors.muted,
+    'muted-foreground': brandColors.mutedForeground || themes.light.colors['muted-foreground'],
+    border: brandColors.border || themes.light.colors.border,
+    input: brandColors.input || themes.light.colors.input,
+    ring: brandColors.ring || themes.light.colors.ring,
+  };
+  
+  Object.entries(themeColorsMap).forEach(([key, value]) => {
+    cssVars.push(`  --nst-color-${key}: ${value};`);
+  });
 
   // Função auxiliar para obter valor aninhado do objeto
   function getNestedValue(obj, path) {
     return path.split('.').reduce((current, key) => current?.[key], obj);
   }
 
-  // Itera sobre o mapeamento e adiciona tokens customizados
-  // Aceita qualquer formato de cor (hex, hsl, rgb, var, etc) - sem conversão
-  Object.entries(componentTokenMap).forEach(([jsonPath, cssToken]) => {
-    const value = getNestedValue(brandData.components, jsonPath);
-    if (value !== undefined && value !== null) {
-      cssVars.push(`  ${cssToken}: ${value};`);
+  // Função para processar valores padrão, substituindo referências a primary
+  function processValue(value) {
+    if (typeof value !== 'string') return value;
+    return value
+      .replace(/hsl\(var\(--nst-color-primary\)\)/g, `hsl(${primaryH} ${primaryS}% ${primaryL}%)`)
+      .replace(/hsl\(var\(--nst-color-primary\)\s*\/\s*0\.9\)/g, `hsl(${primaryH} ${primaryS}% ${Math.max(primaryL - 10, 0)}%)`);
+  }
+
+  // Mapeamento simplificado: caminho no JSON -> token CSS
+  const componentMap = {
+    'navbar.background': '--nst-color-navbar-bg',
+    'navbar.text': '--nst-color-navbar-text',
+    'navbar.border': '--nst-color-navbar-border',
+    'navbar.brand': '--nst-color-navbar-brand',
+    'navbar.brandHover': '--nst-color-navbar-brand-hover',
+    'navItem.background': '--nst-color-nav-item-bg',
+    'navItem.text': '--nst-color-nav-item-text',
+    'navLink.default': '--nst-color-nav-link',
+    'navLink.hover': '--nst-color-nav-link-hover',
+    'navLink.active': '--nst-color-nav-link-active',
+    'navLink.disabled': '--nst-color-nav-link-disabled',
+    'button.background': '--nst-color-btn-bg',
+    'button.text': '--nst-color-btn-text',
+    'button.border': '--nst-color-btn-border',
+    'button.outlinePrimary': '--nst-color-btn-outline-primary',
+    'button.outlinePrimaryHoverBackground': '--nst-color-btn-outline-primary-hover-bg',
+    'button.outlinePrimaryHoverText': '--nst-color-btn-outline-primary-hover-text',
+    'button.outlineDanger': '--nst-color-btn-outline-danger',
+    'button.outlineDangerHoverBackground': '--nst-color-btn-outline-danger-hover-bg',
+    'button.outlineDangerHoverText': '--nst-color-btn-outline-danger-hover-text',
+  };
+
+  // Processa componentes customizados (colors.components ou components na raiz)
+  const customizedTokens = new Set();
+  const componentsSource = brandColors.components || brandData.components;
+  
+  if (componentsSource) {
+    Object.entries(componentMap).forEach(([path, token]) => {
+      const value = getNestedValue(componentsSource, path);
+      if (value !== undefined && value !== null) {
+        cssVars.push(`  ${token}: ${value};`);
+        customizedTokens.add(token);
+      }
+    });
+  }
+
+  // Adiciona valores padrão para componentes não customizados
+  Object.entries(componentMap).forEach(([path, token]) => {
+    if (!customizedTokens.has(token)) {
+      const defaultValue = getNestedValue(defaultComponents, path);
+      if (defaultValue !== undefined) {
+        cssVars.push(`  ${token}: ${processValue(defaultValue)};`);
+      }
     }
   });
 
-  // Core tokens
+  // Core tokens (cores neutras - não customizáveis por brand)
   Object.entries(coreTokens.colors.neutral).forEach(([key, value]) => {
     cssVars.push(`  --nst-color-neutral-${key}: ${value};`);
   });
@@ -162,17 +217,26 @@ function generateBrandCSS(brandName, brandData) {
     cssVars.push(`  --nst-z-${key}: ${value};`);
   });
 
-  Object.entries(themes.light.colors).forEach(([key, value]) => {
-    cssVars.push(`  --nst-color-${key}: ${value};`);
-  });
-
   const lightCSS = `:root {\n${cssVars.join('\n')}\n}\n\n`;
 
   const darkVars = [];
-  Object.entries(themes.dark.colors).forEach(([key, value]) => {
+  
+  // Cores do tema dark - se definidas no brand, usa elas; senão usa os defaults
+  const darkThemeColorsMap = {
+    background: brandColors.dark?.background || themes.dark.colors.background,
+    foreground: brandColors.dark?.foreground || themes.dark.colors.foreground,
+    muted: brandColors.dark?.muted || themes.dark.colors.muted,
+    'muted-foreground': brandColors.dark?.mutedForeground || themes.dark.colors['muted-foreground'],
+    border: brandColors.dark?.border || themes.dark.colors.border,
+    input: brandColors.dark?.input || themes.dark.colors.input,
+    ring: brandColors.dark?.ring || themes.dark.colors.ring,
+  };
+  
+  Object.entries(darkThemeColorsMap).forEach(([key, value]) => {
     darkVars.push(`  --nst-color-${key}: ${value};`);
   });
 
+  // Primary ajustado para dark mode (mais claro)
   const adjustedPrimaryL = Math.min(primaryL + 15, 100);
   darkVars.push(`  --nst-color-primary: ${primaryH} ${primaryS}% ${adjustedPrimaryL}%;`);
 

@@ -3,9 +3,6 @@
  * Importa todos os estilos modulares
  */
 
-/* Tokens de Cor */
-@import './tokens/color-tokens.css';
-
 /* Base */
 @import './base.css';
 
@@ -23,4 +20,5 @@
 @import './components/header.css';
 @import './components/navbar.css';
 @import './components/nav.css';
+@import './components/button.css';
 
