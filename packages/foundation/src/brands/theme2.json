@@ -25,20 +25,20 @@
     },
     "components": {
       "navbar": {
-        "background": "#ff7f00",
+        "background": "#ffffff",
         "text": "#171717",
-        "border": "#ff7f00",
+        "border": "#ffffff",
         "brand": "#ff3d03",
         "brandHover": "#e63503"
       },
       "navItem": {
         "background": "transparent",
-        "text": "#171717"
+        "text": "#ff3d03"
       },
       "navLink": {
-        "default": "#fafafa",
-        "hover": "#ff3d03",
-        "active": "#ff3d03",
+        "default": "#ff3d03",
+        "hover": "#e63503",
+        "active": "#e63503",
         "disabled": "#737373"
       },
       "button": {
