@@ -25,9 +25,9 @@
     },
     "components": {
       "navbar": {
-        "background": "#ffffff",
-        "text": "#171717",
-        "border": "#e5e5e5",
+        "background": "#20242d",
+        "text": "#fafafa",
+        "border": "#20242d",
         "brand": "#ff3d03",
         "brandHover": "#e63503"
       },
@@ -36,14 +36,14 @@
         "text": "#171717"
       },
       "navLink": {
-        "default": "#171717",
+        "default": "#fafafa",
         "hover": "#ff3d03",
         "active": "#ff3d03",
         "disabled": "#737373"
       },
       "button": {
-        "background": "transparent",
-        "text": "#171717",
+        "background": "#ff3d03",
+        "text": "#fafafa",
         "border": "#e5e5e5",
         "outlinePrimary": "#ff3d03",
         "outlinePrimaryHoverBackground": "#ff3d03",
