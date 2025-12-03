@@ -1,8 +1,8 @@
 {
   "brand": "theme2",
   "colors": {
-    "primary": "#6366f1",
-    "secondary": "#8b5cf6",
+    "primary": "#ff3d03",
+    "secondary": "#ff7f00",
     "success": "#10b981",
     "error": "#ef4444",
     "warning": "#f59e0b",
@@ -10,10 +10,10 @@
     "background": "#ffffff",
     "foreground": "#171717",
     "muted": "#f5f5f5",
-    "mutedForeground": "#737373",
+    "mutedForeground": "#c7c7c7",
     "border": "#e5e5e5",
     "input": "#e5e5e5",
-    "ring": "#6366f1",
+    "ring": "#ff3d03",
     "dark": {
       "background": "#0a0a0a",
       "foreground": "#fafafa",
@@ -21,7 +21,47 @@
       "mutedForeground": "#a3a3a3",
       "border": "#262626",
       "input": "#262626",
-      "ring": "#8b5cf6"
+      "ring": "#ff7f00"
+    },
+    "components": {
+      "navbar": {
+        "background": "#ff7f00",
+        "text": "#171717",
+        "border": "#ff7f00",
+        "brand": "#ff3d03",
+        "brandHover": "#e63503"
+      },
+      "navItem": {
+        "background": "transparent",
+        "text": "#171717"
+      },
+      "navLink": {
+        "default": "#fafafa",
+        "hover": "#ff3d03",
+        "active": "#ff3d03",
+        "disabled": "#737373"
+      },
+      "button": {
+        "background": "#ff3d03",
+        "text": "#fafafa",
+        "textHover": "#ffffff",
+        "border": "#ff3d03",
+        "outlinePrimary": "#ff3d03",
+        "outlinePrimaryHoverBackground": "#ff3d03",
+        "outlinePrimaryHoverText": "#ffffff",
+        "outlineDanger": "#ef4444",
+        "outlineDangerHoverBackground": "#ef4444",
+        "outlineDangerHoverText": "#ffffff"
+      },
+      "footer": {
+        "background": "#ffffff",
+        "text": "#ff3d03",
+        "border": "#ff3d03"
+      },
+      "body": {
+        "background": "#ffffff",
+        "text": "#171717"
+      }
     }
   }
 }
