@@ -35,12 +35,12 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
 </head>
 <body>
   <!-- Usar os componentes -->
-  <nst-button variant="primary" size="md">Clique aqui</ds-button>
-  <nst-input type="text" placeholder="Digite algo..."></ds-input>
+  <nst-button variant="primary" size="md">Clique aqui</nst-button>
+  <nst-input type="text" placeholder="Digite algo..."></nst-input>
   <nst-card padding="md">
     <h2>Card Title</h2>
     <p>Card content</p>
-  </ds-card>
+  </nst-card>
 </body>
 </html>
 ```
@@ -75,7 +75,7 @@ Veja [CDN.md](../../CDN.md) para mais detalhes sobre as opções de CDN.
 <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 
 <!-- Usar os componentes -->
-<nst-button variant="primary">Clique aqui</ds-button>
+<nst-button variant="primary">Clique aqui</nst-button>
 ```
 
 **⚠️ IMPORTANTE:** Sempre use `type="module"` no script tag e o arquivo `nst-ds.esm.js`. Sem isso, você receberá o erro: "Cannot use import statement outside a module"
@@ -97,12 +97,12 @@ Veja [CDN.md](../../CDN.md) para mais detalhes sobre as opções de CDN.
   <script type="module" src="node_modules/@lcpereira/nst-ds-primitives/dist/bundle/nst-ds.esm.js"></script>
 </head>
 <body>
-  <nst-button variant="primary" size="md">Clique aqui</ds-button>
-  <nst-input type="text" placeholder="Digite algo..."></ds-input>
+  <nst-button variant="primary" size="md">Clique aqui</nst-button>
+  <nst-input type="text" placeholder="Digite algo..."></nst-input>
   <nst-card padding="md">
     <h2>Card Title</h2>
     <p>Card content</p>
-  </ds-card>
+  </nst-card>
 </body>
 </html>
 ```
@@ -138,7 +138,7 @@ function App() {
   <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 </head>
 <body>
-  <?php echo '<nst-button variant="primary">Botão PHP</ds-button>'; ?>
+  <?php echo '<nst-button variant="primary">Botão PHP</nst-button>'; ?>
 </body>
 </html>
 ```

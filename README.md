@@ -67,7 +67,7 @@ Web Components universais compatíveis com qualquer stack (React, Angular, Vue, 
 <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/nst-ds.css">
 <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.js"></script>
 
-<nst-button variant="primary">Clique aqui</ds-button>
+<nst-button variant="primary">Clique aqui</nst-button>
 ```
 
 ### @lcpereira/nst-ds-react
@@ -116,7 +116,7 @@ O Design System pode ser usado diretamente via CDN, sem necessidade de npm ou bu
 <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.js"></script>
 
 <!-- Usar os componentes -->
-<nst-button variant="primary">Clique aqui</ds-button>
+<nst-button variant="primary">Clique aqui</nst-button>
 ```
 
 ## 🏗️ Arquitetura

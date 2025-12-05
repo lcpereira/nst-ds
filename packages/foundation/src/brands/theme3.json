@@ -1,0 +1,67 @@
+{
+  "brand": "theme3",
+  "colors": {
+    "primary": "#0066FF",
+    "secondary": "#00D9FF",
+    "success": "#10b981",
+    "error": "#ef4444",
+    "warning": "#f59e0b",
+    "info": "#3b82f6",
+    "background": "#ffffff",
+    "foreground": "#171717",
+    "muted": "#f0f7ff",
+    "mutedForeground": "#64748b",
+    "border": "#cbd5e1",
+    "input": "#e2e8f0",
+    "ring": "#0066FF",
+    "dark": {
+      "background": "#0f172a",
+      "foreground": "#f1f5f9",
+      "muted": "#1e293b",
+      "mutedForeground": "#94a3b8",
+      "border": "#334155",
+      "input": "#334155",
+      "ring": "#00D9FF"
+    },
+    "components": {
+      "navbar": {
+        "background": "#0f172a",
+        "text": "#f1f5f9",
+        "border": "#1e293b",
+        "brand": "#00D9FF",
+        "brandHover": "#00b8e6"
+      },
+      "navItem": {
+        "background": "transparent",
+        "text": "#f1f5f9"
+      },
+      "navLink": {
+        "default": "#cbd5e1",
+        "hover": "#00D9FF",
+        "active": "#00D9FF",
+        "disabled": "#64748b"
+      },
+      "button": {
+        "background": "#0066FF",
+        "text": "#ffffff",
+        "textHover": "#ffffff",
+        "border": "#0066FF",
+        "outlinePrimary": "#0066FF",
+        "outlinePrimaryHoverBackground": "#0066FF",
+        "outlinePrimaryHoverText": "#ffffff",
+        "outlineDanger": "#ef4444",
+        "outlineDangerHoverBackground": "#ef4444",
+        "outlineDangerHoverText": "#ffffff"
+      },
+      "footer": {
+        "background": "#0f172a",
+        "text": "#00D9FF",
+        "border": "#1e293b"
+      },
+      "body": {
+        "background": "#ffffff",
+        "text": "#171717"
+      }
+    }
+  }
+}

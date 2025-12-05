@@ -15,9 +15,9 @@
 
 import theme1 from './theme1.json';
 import theme2 from './theme2.json';
-import trizy from './trizy.json';
+import theme3 from './theme3.json';
 
-export type Brand = 'theme1' | 'theme2' | 'trizy';
+export type Brand = 'theme1' | 'theme2' | 'theme3';
 
 export interface BrandColors {
   brand: Brand;
@@ -30,7 +30,7 @@ export interface BrandColors {
 export const brands = {
   theme1,
   theme2,
-  trizy,
+  theme3,
 } as const;
 
 export default brands;
