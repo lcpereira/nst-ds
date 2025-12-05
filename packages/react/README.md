@@ -63,7 +63,7 @@ function App() {
 Os componentes usam tokens do `@lcpereira/nst-ds-foundation` via Tailwind. Certifique-se de importar o CSS do foundation:
 
 ```tsx
-import '@lcpereira/nst-ds-foundation/dist/css/theme1.css';
+import '@lcpereira/nst-ds-foundation/dist/css/nst-theme1.css';
 import '@lcpereira/nst-ds-react/styles';
 ```
 

@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'ds-button',
+  tag: 'nst-button',
   styleUrl: 'button.css',
   shadow: true,
 })

@@ -35,9 +35,9 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
 </head>
 <body>
   <!-- Usar os componentes -->
-  <ds-button variant="primary" size="md">Clique aqui</ds-button>
-  <ds-input type="text" placeholder="Digite algo..."></ds-input>
-  <ds-card padding="md">
+  <nst-button variant="primary" size="md">Clique aqui</ds-button>
+  <nst-input type="text" placeholder="Digite algo..."></ds-input>
+  <nst-card padding="md">
     <h2>Card Title</h2>
     <p>Card content</p>
   </ds-card>
@@ -48,7 +48,7 @@ Use diretamente no HTML via CDN, sem precisar de npm ou bundler:
 **Opção 2: jsDelivr (GitHub Repository)**
 ```html
 <!-- Foundation CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/theme1.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme1.css">
 
 <!-- Primitives CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.css">
@@ -75,14 +75,14 @@ Veja [CDN.md](../../CDN.md) para mais detalhes sobre as opções de CDN.
 <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 
 <!-- Usar os componentes -->
-<ds-button variant="primary">Clique aqui</ds-button>
+<nst-button variant="primary">Clique aqui</ds-button>
 ```
 
 **⚠️ IMPORTANTE:** Sempre use `type="module"` no script tag e o arquivo `nst-ds.esm.js`. Sem isso, você receberá o erro: "Cannot use import statement outside a module"
 
 **jsDelivr (alternativa):**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/theme1.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme1.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.css">
 <script type="module" src="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/primitives/dist/bundle/nst-ds.esm.js"></script>
 ```
@@ -93,13 +93,13 @@ Veja [CDN.md](../../CDN.md) para mais detalhes sobre as opções de CDN.
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="node_modules/@lcpereira/nst-ds-foundation/dist/css/theme1.css">
+  <link rel="stylesheet" href="node_modules/@lcpereira/nst-ds-foundation/dist/css/nst-theme1.css">
   <script type="module" src="node_modules/@lcpereira/nst-ds-primitives/dist/bundle/nst-ds.esm.js"></script>
 </head>
 <body>
-  <ds-button variant="primary" size="md">Clique aqui</ds-button>
-  <ds-input type="text" placeholder="Digite algo..."></ds-input>
-  <ds-card padding="md">
+  <nst-button variant="primary" size="md">Clique aqui</ds-button>
+  <nst-input type="text" placeholder="Digite algo..."></ds-input>
+  <nst-card padding="md">
     <h2>Card Title</h2>
     <p>Card content</p>
   </ds-card>
@@ -117,7 +117,7 @@ defineCustomElements();
 
 function App() {
   return (
-    <ds-button variant="primary">Clique aqui</ds-button>
+    <nst-button variant="primary">Clique aqui</ds-button>
   );
 }
 ```
@@ -138,7 +138,7 @@ function App() {
   <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.esm.js"></script>
 </head>
 <body>
-  <?php echo '<ds-button variant="primary">Botão PHP</ds-button>'; ?>
+  <?php echo '<nst-button variant="primary">Botão PHP</ds-button>'; ?>
 </body>
 </html>
 ```
@@ -150,21 +150,21 @@ function App() {
 
 ## Componentes Disponíveis
 
-- `<ds-button>` - Botão com variantes e tamanhos
+- `<nst-button>` - Botão com variantes e tamanhos
   - Variantes: `primary`, `secondary`, `outline`, `ghost`
   - Tamanhos: `sm`, `md`, `lg`
 
-- `<ds-input>` - Campo de entrada
+- `<nst-input>` - Campo de entrada
   - Tipos: `text`, `email`, `password`, etc.
   - Suporta eventos: `inputChange`, `inputFocus`, `inputBlur`
 
-- `<ds-card>` - Card container
+- `<nst-card>` - Card container
   - Padding: `sm`, `md`, `lg`
 
-- `<ds-spinner>` - Indicador de carregamento
+- `<nst-spinner>` - Indicador de carregamento
   - Tamanhos: `sm`, `md`, `lg`
 
-- `<ds-badge>` - Badge/etiqueta
+- `<nst-badge>` - Badge/etiqueta
   - Variantes: `default`, `primary`, `secondary`, `success`, `warning`, `error`
   - Tamanhos: `sm`, `md`
 

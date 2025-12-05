@@ -53,40 +53,40 @@
   <section class="section">
     <h2>Buttons</h2>
     <div class="button-group">
-      <ds-button variant="primary" size="md">Primary</ds-button>
-      <ds-button variant="secondary" size="md">Secondary</ds-button>
-      <ds-button variant="outline" size="md">Outline</ds-button>
-      <ds-button variant="ghost" size="md">Ghost</ds-button>
+      <nst-button variant="primary" size="md">Primary</ds-button>
+      <nst-button variant="secondary" size="md">Secondary</ds-button>
+      <nst-button variant="outline" size="md">Outline</ds-button>
+      <nst-button variant="ghost" size="md">Ghost</ds-button>
     </div>
     <div class="button-group">
-      <ds-button variant="primary" size="sm">Small</ds-button>
-      <ds-button variant="primary" size="md">Medium</ds-button>
-      <ds-button variant="primary" size="lg">Large</ds-button>
+      <nst-button variant="primary" size="sm">Small</ds-button>
+      <nst-button variant="primary" size="md">Medium</ds-button>
+      <nst-button variant="primary" size="lg">Large</ds-button>
     </div>
   </section>
 
   <section class="section">
     <h2>Input</h2>
     <div class="input-group">
-      <ds-input type="text" placeholder="Digite seu nome..." name="nome"></ds-input>
+      <nst-input type="text" placeholder="Digite seu nome..." name="nome"></ds-input>
     </div>
     <div class="input-group">
-      <ds-input type="email" placeholder="Digite seu email..." name="email"></ds-input>
+      <nst-input type="email" placeholder="Digite seu email..." name="email"></ds-input>
     </div>
     <div class="input-group">
-      <ds-input type="password" placeholder="Digite sua senha..." name="senha"></ds-input>
+      <nst-input type="password" placeholder="Digite sua senha..." name="senha"></ds-input>
     </div>
   </section>
 
   <section class="section">
     <h2>Card</h2>
-    <ds-card padding="md" style="max-width: 500px;">
+    <nst-card padding="md" style="max-width: 500px;">
       <h3>Card Title</h3>
       <p>Este é um exemplo de card usando Web Components do Design System. O card herda automaticamente os tokens do
         Foundation via CSS variables.</p>
       <div class="button-group" style="margin-top: var(--spacing-4, 1rem);">
-        <ds-button variant="primary" size="sm">Ação 1</ds-button>
-        <ds-button variant="outline" size="sm">Ação 2</ds-button>
+        <nst-button variant="primary" size="sm">Ação 1</ds-button>
+        <nst-button variant="outline" size="sm">Ação 2</ds-button>
       </div>
     </ds-card>
   </section>
@@ -94,28 +94,28 @@
   <section class="section">
     <h2>Badge</h2>
     <div style="display: flex; gap: var(--spacing-2, 0.5rem); flex-wrap: wrap;">
-      <ds-badge variant="default">Default</ds-badge>
-      <ds-badge variant="primary">Primary</ds-badge>
-      <ds-badge variant="secondary">Secondary</ds-badge>
-      <ds-badge variant="success">Success</ds-badge>
-      <ds-badge variant="warning">Warning</ds-badge>
-      <ds-badge variant="error">Error</ds-badge>
+      <nst-badge variant="default">Default</ds-badge>
+      <nst-badge variant="primary">Primary</ds-badge>
+      <nst-badge variant="secondary">Secondary</ds-badge>
+      <nst-badge variant="success">Success</ds-badge>
+      <nst-badge variant="warning">Warning</ds-badge>
+      <nst-badge variant="error">Error</ds-badge>
     </div>
   </section>
 
   <section class="section">
     <h2>Spinner</h2>
     <div style="display: flex; gap: var(--spacing-4, 1rem); align-items: center;">
-      <ds-spinner size="sm"></ds-spinner>
-      <ds-spinner size="md"></ds-spinner>
-      <ds-spinner size="lg"></ds-spinner>
+      <nst-spinner size="sm"></ds-spinner>
+      <nst-spinner size="md"></ds-spinner>
+      <nst-spinner size="lg"></ds-spinner>
     </div>
   </section>
 
   <section class="section">
     <h2>Dark Mode</h2>
     <p>Adicione a classe "dark" ao elemento &lt;html&gt; para ativar o dark mode.</p>
-    <ds-button variant="outline" size="md" onclick="document.documentElement.classList.toggle('dark')">
+    <nst-button variant="outline" size="md" onclick="document.documentElement.classList.toggle('dark')">
       Toggle Dark Mode
     </ds-button>
   </section>

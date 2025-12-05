@@ -16,16 +16,16 @@ npm install @lcpereira/nst-ds-foundation
 
 **Opção 1: GitHub Pages (Recomendado)**
 ```html
-<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/theme1.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
 <!-- ou -->
-<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/theme2.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme2.css">
 ```
 
 **Opção 2: jsDelivr (GitHub Repository)**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/theme1.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme1.css">
 <!-- ou -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/theme2.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme2.css">
 ```
 
 **Nota:** Para versões específicas no jsDelivr, substitua `@main` por `@v1.0.0` (tag) ou `@commit-hash`. Veja [CDN.md](../../CDN.md) para mais detalhes.
@@ -46,13 +46,10 @@ const spacingValue = spacing[4]; // '1rem'
 
 ```html
 <!-- Via CDN - GitHub Pages (recomendado) -->
-<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/css/theme1.css">
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
 
 <!-- Via CDN - jsDelivr (alternativa) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/theme1.css">
-
-<!-- Via NPM (se estiver usando bundler) -->
-<!-- O caminho será: node_modules/@lcpereira/nst-ds-foundation/dist/css/theme1.css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme1.css">
 ```
 
 ### Tailwind
@@ -82,7 +79,7 @@ export default {
 ```
 3. Execute `yarn build` - o sistema detectará automaticamente e gerará:
    - Tipos TypeScript atualizados
-   - Arquivo CSS em `dist/css/novobrand.css`
+   - Arquivo CSS em `dist/css/nst-novobrand.css`
    - Disponibilidade via CDN
 
 Veja mais detalhes em [src/brands/README.md](./src/brands/README.md)

@@ -256,7 +256,7 @@ if (!fs.existsSync(distCssDir)) {
   fs.mkdirSync(distCssDir, { recursive: true });
 }
 
-// Gera CSS para cada brand (mantém compatibilidade com npm)
+// Gera CSS para cada brand (usa apenas nst-*.css para consistência)
 Object.entries(brands).forEach(([brandName, brandData]) => {
   const css = generateBrandCSS(brandName, brandData);
   
@@ -270,12 +270,8 @@ Object.entries(brands).forEach(([brandName, brandData]) => {
   // Combinar CSS variables + estilos
   const finalCss = css + stylesContent;
   
-  // Manter nome original para npm
-  const outputPath = path.join(distCssDir, `${brandName}.css`);
+  // Gerar apenas com prefixo nst- (usado tanto para NPM quanto CDN)
+  const outputPath = path.join(distCssDir, `nst-${brandName}.css`);
   fs.writeFileSync(outputPath, finalCss, 'utf-8');
-  
-  // Gerar também com prefixo nst- para CDN
-  const cdnOutputPath = path.join(distCssDir, `nst-${brandName}.css`);
-  fs.writeFileSync(cdnOutputPath, finalCss, 'utf-8');
 });
 

@@ -44,17 +44,17 @@ Tokens, temas e brands. Fonte única de verdade para cores, tipografia, spacing,
 **Uso NPM:**
 ```typescript
 import { colors, spacing, brands } from '@lcpereira/nst-ds-foundation';
-import '@lcpereira/nst-ds-foundation/dist/css/theme1.css';
+import '@lcpereira/nst-ds-foundation/dist/css/nst-theme1.css';
 ```
 
 **Uso CDN (sem npm):**
 ```html
 <!-- GitHub Pages (recomendado) -->
-<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme.css">
-<!-- ou nst-nsapps.css -->
+<link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/foundation/nst-theme1.css">
+<!-- ou nst-theme2.css, nst-trizy.css -->
 
 <!-- Alternativa: jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lcpereira/nst-ds@main/packages/foundation/dist/css/nst-theme1.css">
 ```
 
 ### @lcpereira/nst-ds-primitives
@@ -67,7 +67,7 @@ Web Components universais compatíveis com qualquer stack (React, Angular, Vue, 
 <link rel="stylesheet" href="https://lcpereira.github.io/nst-ds/primitives/nst-ds.css">
 <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.js"></script>
 
-<ds-button variant="primary">Clique aqui</ds-button>
+<nst-button variant="primary">Clique aqui</ds-button>
 ```
 
 ### @lcpereira/nst-ds-react
@@ -116,7 +116,7 @@ O Design System pode ser usado diretamente via CDN, sem necessidade de npm ou bu
 <script type="module" src="https://lcpereira.github.io/nst-ds/primitives/nst-ds.js"></script>
 
 <!-- Usar os componentes -->
-<ds-button variant="primary">Clique aqui</ds-button>
+<nst-button variant="primary">Clique aqui</ds-button>
 ```
 
 ## 🏗️ Arquitetura

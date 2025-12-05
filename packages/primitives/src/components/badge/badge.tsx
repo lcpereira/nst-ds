@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'ds-badge',
+  tag: 'nst-badge',
   styleUrl: 'badge.css',
   shadow: true,
 })

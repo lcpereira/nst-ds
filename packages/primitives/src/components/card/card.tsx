@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'ds-card',
+  tag: 'nst-card',
   styleUrl: 'card.css',
   shadow: true,
 })

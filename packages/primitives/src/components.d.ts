@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface DsBadge {
+    interface NstBadge {
         /**
           * @default 'md'
          */
@@ -16,7 +16,7 @@ export namespace Components {
          */
         "variant": 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error';
     }
-    interface DsButton {
+    interface NstButton {
         /**
           * @default false
          */
@@ -34,13 +34,13 @@ export namespace Components {
          */
         "variant": 'primary' | 'secondary' | 'outline' | 'ghost';
     }
-    interface DsCard {
+    interface NstCard {
         /**
           * @default 'md'
          */
         "padding": 'sm' | 'md' | 'lg';
     }
-    interface DsInput {
+    interface NstInput {
         /**
           * @default false
          */
@@ -66,71 +66,71 @@ export namespace Components {
          */
         "value": string;
     }
-    interface DsSpinner {
+    interface NstSpinner {
         /**
           * @default 'md'
          */
         "size": 'sm' | 'md' | 'lg';
     }
 }
-export interface DsInputCustomEvent<T> extends CustomEvent<T> {
+export interface NstInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLDsInputElement;
+    target: HTMLNstInputElement;
 }
 declare global {
-    interface HTMLDsBadgeElement extends Components.DsBadge, HTMLStencilElement {
+    interface HTMLNstBadgeElement extends Components.NstBadge, HTMLStencilElement {
     }
-    var HTMLDsBadgeElement: {
-        prototype: HTMLDsBadgeElement;
-        new (): HTMLDsBadgeElement;
+    var HTMLNstBadgeElement: {
+        prototype: HTMLNstBadgeElement;
+        new (): HTMLNstBadgeElement;
     };
-    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
+    interface HTMLNstButtonElement extends Components.NstButton, HTMLStencilElement {
     }
-    var HTMLDsButtonElement: {
-        prototype: HTMLDsButtonElement;
-        new (): HTMLDsButtonElement;
+    var HTMLNstButtonElement: {
+        prototype: HTMLNstButtonElement;
+        new (): HTMLNstButtonElement;
     };
-    interface HTMLDsCardElement extends Components.DsCard, HTMLStencilElement {
+    interface HTMLNstCardElement extends Components.NstCard, HTMLStencilElement {
     }
-    var HTMLDsCardElement: {
-        prototype: HTMLDsCardElement;
-        new (): HTMLDsCardElement;
+    var HTMLNstCardElement: {
+        prototype: HTMLNstCardElement;
+        new (): HTMLNstCardElement;
     };
-    interface HTMLDsInputElementEventMap {
+    interface HTMLNstInputElementEventMap {
         "inputChange": string;
         "inputFocus": void;
         "inputBlur": void;
     }
-    interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLDsInputElementEventMap>(type: K, listener: (this: HTMLDsInputElement, ev: DsInputCustomEvent<HTMLDsInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+    interface HTMLNstInputElement extends Components.NstInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLNstInputElementEventMap>(type: K, listener: (this: HTMLNstInputElement, ev: NstInputCustomEvent<HTMLNstInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLDsInputElementEventMap>(type: K, listener: (this: HTMLDsInputElement, ev: DsInputCustomEvent<HTMLDsInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLNstInputElementEventMap>(type: K, listener: (this: HTMLNstInputElement, ev: NstInputCustomEvent<HTMLNstInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
         removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLDsInputElement: {
-        prototype: HTMLDsInputElement;
-        new (): HTMLDsInputElement;
+    var HTMLNstInputElement: {
+        prototype: HTMLNstInputElement;
+        new (): HTMLNstInputElement;
     };
-    interface HTMLDsSpinnerElement extends Components.DsSpinner, HTMLStencilElement {
+    interface HTMLNstSpinnerElement extends Components.NstSpinner, HTMLStencilElement {
     }
-    var HTMLDsSpinnerElement: {
-        prototype: HTMLDsSpinnerElement;
-        new (): HTMLDsSpinnerElement;
+    var HTMLNstSpinnerElement: {
+        prototype: HTMLNstSpinnerElement;
+        new (): HTMLNstSpinnerElement;
     };
     interface HTMLElementTagNameMap {
-        "ds-badge": HTMLDsBadgeElement;
-        "ds-button": HTMLDsButtonElement;
-        "ds-card": HTMLDsCardElement;
-        "ds-input": HTMLDsInputElement;
-        "ds-spinner": HTMLDsSpinnerElement;
+        "nst-badge": HTMLNstBadgeElement;
+        "nst-button": HTMLNstButtonElement;
+        "nst-card": HTMLNstCardElement;
+        "nst-input": HTMLNstInputElement;
+        "nst-spinner": HTMLNstSpinnerElement;
     }
 }
 declare namespace LocalJSX {
-    interface DsBadge {
+    interface NstBadge {
         /**
           * @default 'md'
          */
@@ -140,7 +140,7 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error';
     }
-    interface DsButton {
+    interface NstButton {
         /**
           * @default false
          */
@@ -158,13 +158,13 @@ declare namespace LocalJSX {
          */
         "variant"?: 'primary' | 'secondary' | 'outline' | 'ghost';
     }
-    interface DsCard {
+    interface NstCard {
         /**
           * @default 'md'
          */
         "padding"?: 'sm' | 'md' | 'lg';
     }
-    interface DsInput {
+    interface NstInput {
         /**
           * @default false
          */
@@ -173,9 +173,9 @@ declare namespace LocalJSX {
           * @default ''
          */
         "name"?: string;
-        "onInputBlur"?: (event: DsInputCustomEvent<void>) => void;
-        "onInputChange"?: (event: DsInputCustomEvent<string>) => void;
-        "onInputFocus"?: (event: DsInputCustomEvent<void>) => void;
+        "onInputBlur"?: (event: NstInputCustomEvent<void>) => void;
+        "onInputChange"?: (event: NstInputCustomEvent<string>) => void;
+        "onInputFocus"?: (event: NstInputCustomEvent<void>) => void;
         /**
           * @default ''
          */
@@ -193,29 +193,29 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
-    interface DsSpinner {
+    interface NstSpinner {
         /**
           * @default 'md'
          */
         "size"?: 'sm' | 'md' | 'lg';
     }
     interface IntrinsicElements {
-        "ds-badge": DsBadge;
-        "ds-button": DsButton;
-        "ds-card": DsCard;
-        "ds-input": DsInput;
-        "ds-spinner": DsSpinner;
+        "nst-badge": NstBadge;
+        "nst-button": NstButton;
+        "nst-card": NstCard;
+        "nst-input": NstInput;
+        "nst-spinner": NstSpinner;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ds-badge": LocalJSX.DsBadge & JSXBase.HTMLAttributes<HTMLDsBadgeElement>;
-            "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
-            "ds-card": LocalJSX.DsCard & JSXBase.HTMLAttributes<HTMLDsCardElement>;
-            "ds-input": LocalJSX.DsInput & JSXBase.HTMLAttributes<HTMLDsInputElement>;
-            "ds-spinner": LocalJSX.DsSpinner & JSXBase.HTMLAttributes<HTMLDsSpinnerElement>;
+            "nst-badge": LocalJSX.NstBadge & JSXBase.HTMLAttributes<HTMLNstBadgeElement>;
+            "nst-button": LocalJSX.NstButton & JSXBase.HTMLAttributes<HTMLNstButtonElement>;
+            "nst-card": LocalJSX.NstCard & JSXBase.HTMLAttributes<HTMLNstCardElement>;
+            "nst-input": LocalJSX.NstInput & JSXBase.HTMLAttributes<HTMLNstInputElement>;
+            "nst-spinner": LocalJSX.NstSpinner & JSXBase.HTMLAttributes<HTMLNstSpinnerElement>;
         }
     }
 }

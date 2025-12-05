@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'ds-spinner',
+  tag: 'nst-spinner',
   styleUrl: 'spinner.css',
   shadow: true,
 })
